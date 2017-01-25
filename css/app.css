@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700");
+* {
+  box-sizing: border-box;
+  font-family: Georgia, Times, Courier, Palatino, serif;
+  background-color: #555;
+  color: #FFCF75;
+  line-height: 1.5; }
+
+#content {
+  width: 480px;
+  margin: 0 auto; }
+
+h1 {
+  height: 75px;
+  margin-bottom: 0.5em;
+  font-size: 3em; }
+
+.nav {
+  font-family: 'Averia Serif Libre', cursive; }
+
+a {
+  color: #3f894a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent; }
+  a:hover {
+    color: #27552e;
+    border-bottom: 1px solid #27552e; }
+
+
+
+/*# sourceMappingURL=app.css.map*/

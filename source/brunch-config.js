@@ -1,6 +1,7 @@
 module.exports = {
   config: {
     paths: {
+      public: "..",
       watched: ["app"]
     },
     files: {
@@ -14,7 +15,7 @@ module.exports = {
     plugins: {
       elmBrunch: {
         mainModules: ["app/elm/Main.elm"],
-        outputFolder: "public/js/"
+        outputFolder: "../js/"
       },
       sass: {
         mode: "native"
