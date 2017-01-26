@@ -8305,11 +8305,11 @@ var _user$project$Talks$Talk = F2(
 var _user$project$Main$renderMM = function (_p0) {
 	var _p1 = _p0;
 	return A2(
-		_elm_lang$html$Html$section,
+		_elm_lang$html$Html$article,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting my web site! My name is Maciej Matyjas and I have presented a number of talks over the last year. Please find a list of them under the `Talks` header.'),
+			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last year. Please find a list of them under the `Talks` header.'),
 			_1: {ctor: '[]'}
 		});
 };

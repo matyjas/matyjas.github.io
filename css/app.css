@@ -26,6 +26,9 @@ a {
     color: #27552e;
     border-bottom: 1px solid #27552e; }
 
+article {
+  max-width: 30em; }
+
 
 
 /*# sourceMappingURL=app.css.map*/
