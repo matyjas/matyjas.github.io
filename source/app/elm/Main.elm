@@ -61,4 +61,4 @@ renderTalk talk = article [] [
 
 renderMM : () -> Html Msg
 renderMM () = 
-    section [] [ text "Thanks for visiting my web site! My name is Maciej Matyjas and I have presented a number of talks over the last year. Please find a list of them under the `Talks` header." ]
+    section [] [ text "Hi! Thanks for visiting my web site! My name is Maciej Matyjas and I have presented a number of talks over the last year. Please find a list of them under the `Talks` header." ]

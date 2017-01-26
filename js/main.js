@@ -8309,7 +8309,7 @@ var _user$project$Main$renderMM = function (_p0) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Thanks for visiting my web site! My name is Maciej Matyjas and I have presented a number of talks over the last year. Please find a list of them under the `Talks` header.'),
+			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting my web site! My name is Maciej Matyjas and I have presented a number of talks over the last year. Please find a list of them under the `Talks` header.'),
 			_1: {ctor: '[]'}
 		});
 };
