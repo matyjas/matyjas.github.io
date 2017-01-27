@@ -8302,17 +8302,6 @@ var _user$project$Talks$Talk = F2(
 		return {title: a, event: b};
 	});
 
-var _user$project$Main$renderMM = function (_p0) {
-	var _p1 = _p0;
-	return A2(
-		_elm_lang$html$Html$article,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last year. Please find a list of them under the `Talks` header.'),
-			_1: {ctor: '[]'}
-		});
-};
 var _user$project$Main$renderTalk = function (talk) {
 	return A2(
 		_elm_lang$html$Html$article,
@@ -8338,11 +8327,91 @@ var _user$project$Main$renderTalk = function (talk) {
 			}
 		});
 };
+var _user$project$Main$navSpace = function (_p0) {
+	var _p1 = _p0;
+	return A2(
+		_elm_lang$html$Html$span,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('nav'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(' | '),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$navSpan = F2(
+	function (msg, label) {
+		return A2(
+			_elm_lang$html$Html$span,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Events$onClick(msg),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('nav'),
+					_1: {ctor: '[]'}
+				}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(label),
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p2 = msg;
+		return _p2._0;
+	});
+var _user$project$Main$Colophon = {ctor: 'Colophon'};
+var _user$project$Main$Survey = {ctor: 'Survey'};
+var _user$project$Main$Widgets = {ctor: 'Widgets'};
+var _user$project$Main$Links = {ctor: 'Links'};
+var _user$project$Main$Talks = {ctor: 'Talks'};
+var _user$project$Main$Matyjas = {ctor: 'Matyjas'};
+var _user$project$Main$model = _user$project$Main$Matyjas;
+var _user$project$Main$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
+var _user$project$Main$renderMatyjas = function (_p3) {
+	var _p4 = _p3;
+	return A2(
+		_elm_lang$html$Html$article,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last few years. Please find a list of them under the'),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$span,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(
+							_user$project$Main$Change(_user$project$Main$Talks)),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('`Talks`'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('header.'),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
 var _user$project$Main$contentForModel = function (model) {
-	var _p2 = model;
-	switch (_p2.ctor) {
-		case 'MM':
-			return _user$project$Main$renderMM(
+	var _p5 = model;
+	switch (_p5.ctor) {
+		case 'Matyjas':
+			return _user$project$Main$renderMatyjas(
 				{ctor: '_Tuple0'});
 		case 'Talks':
 			return A2(
@@ -8358,21 +8427,6 @@ var _user$project$Main$contentForModel = function (model) {
 		default:
 			return _elm_lang$html$Html$text('Colophon');
 	}
-};
-var _user$project$Main$update = F2(
-	function (msg, model) {
-		var _p3 = msg;
-		return _p3._0;
-	});
-var _user$project$Main$Colophon = {ctor: 'Colophon'};
-var _user$project$Main$Survey = {ctor: 'Survey'};
-var _user$project$Main$Widgets = {ctor: 'Widgets'};
-var _user$project$Main$Links = {ctor: 'Links'};
-var _user$project$Main$Talks = {ctor: 'Talks'};
-var _user$project$Main$MM = {ctor: 'MM'};
-var _user$project$Main$model = _user$project$Main$MM;
-var _user$project$Main$Change = function (a) {
-	return {ctor: 'Change', _0: a};
 };
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -8395,55 +8449,19 @@ var _user$project$Main$view = function (model) {
 						{
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(
-										_user$project$Main$Change(_user$project$Main$MM)),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('nav'),
-										_1: {ctor: '[]'}
-									}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('MM'),
-									_1: {ctor: '[]'}
-								}),
+								_user$project$Main$navSpan,
+								_user$project$Main$Change(_user$project$Main$Matyjas),
+								'Matyjas'),
 							_1: {
 								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$span,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('nav'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text(' | '),
-										_1: {ctor: '[]'}
-									}),
+								_0: _user$project$Main$navSpace(
+									{ctor: '_Tuple0'}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$span,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Main$Change(_user$project$Main$Talks)),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('nav'),
-												_1: {ctor: '[]'}
-											}
-										},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Talks'),
-											_1: {ctor: '[]'}
-										}),
+										_user$project$Main$navSpan,
+										_user$project$Main$Change(_user$project$Main$Talks),
+										'Talks'),
 									_1: {ctor: '[]'}
 								}
 							}

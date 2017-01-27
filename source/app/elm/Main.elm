@@ -11,10 +11,10 @@ main = Html.beginnerProgram { model = model,
 
 -- MODEL
 
-type Model = MM | Talks | Links | Widgets | Survey | Colophon
+type Model = Matyjas | Talks | Links | Widgets | Survey | Colophon
 
 model : Model
-model = MM
+model = Matyjas
 
 -- UPDATE
 
@@ -31,17 +31,27 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ id "content" ]
-        [ h1 [] [ nav [] [ span [ onClick ( Change MM ), class "nav" ] [ text "MM" ]
-                 , span [ class "nav" ] [ text " | " ]
-                 , span [ onClick ( Change Talks ), class "nav"  ] [ text "Talks" ]
-                 ] ]
+        [ h1 [] [ nav [] [
+                       navSpan ( Change Matyjas ) "Matyjas"
+                      , navSpace ()
+                      , navSpan ( Change Talks ) "Talks"
+                      ]
+                ]
         , contentForModel model ]
-    
+
+navSpan : Msg -> String -> Html Msg
+navSpan msg label =
+    span [ onClick msg, class "nav" ] [ text label ]
+
+navSpace : () -> Html Msg
+navSpace () =
+    span [ class "nav" ] [ text " | " ]
+        
 contentForModel : Model -> Html Msg
 contentForModel model =
     case model of
-        MM ->
-            renderMM ()
+        Matyjas ->
+            renderMatyjas ()
         Talks ->
             div [] ( List.map renderTalk all )
         Links ->
@@ -59,6 +69,8 @@ renderTalk talk = article [] [
                        text "@", text talk.event
                   ]
 
-renderMM : () -> Html Msg
-renderMM () = 
-    article [] [ text "Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last year. Please find a list of them under the `Talks` header." ]
+renderMatyjas : () -> Html Msg
+renderMatyjas () = 
+    article [] [ text "Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last few years. Please find a list of them under the" ,
+                     span [ onClick (Change Talks) ] [ text "`Talks`" ],
+                     text "header." ]

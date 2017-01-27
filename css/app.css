@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
   font-family: Georgia, Times, Courier, Palatino, serif;
+  font-size: 1.17;
   background-color: #555;
   color: #FFCF75;
   line-height: 1.5; }
@@ -11,9 +12,10 @@
   margin: 0 auto; }
 
 h1 {
+  margin-top: 2em;
   height: 75px;
   margin-bottom: 0.5em;
-  font-size: 3em; }
+  font-size: 1.5em; }
 
 .nav {
   font-family: "Averia Serif Libre", Georgia, Times, Courier, Palatino, serif; }
