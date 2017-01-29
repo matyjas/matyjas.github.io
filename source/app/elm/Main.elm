@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (id, class)
 import Html.Events exposing (onClick)
 import Talks exposing (Talk, all)
+import Links
 
 main = Html.beginnerProgram { model = model,
                               view = view,
@@ -31,14 +32,20 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ id "content" ]
-        [ h1 [] [ nav [] [
-                       navSpan ( Change Matyjas ) "Matyjas"
-                      , navSpace ()
-                      , navSpan ( Change Talks ) "Talks"
-                      ]
-                ]
+        [ navs model
         , contentForModel model ]
 
+navs : Model -> Html Msg
+navs model =
+    h1 [] [ nav [] [
+                 navSpan ( Change Matyjas ) "Matyjas"
+                , navSpace ()
+                , navSpan ( Change Talks ) "Talks"
+                , navSpace ()
+                , navSpan ( Change Links ) "Links"
+                ]
+          ]
+        
 navSpan : Msg -> String -> Html Msg
 navSpan msg label =
     span [ onClick msg, class "nav" ] [ text label ]
@@ -55,7 +62,7 @@ contentForModel model =
         Talks ->
             div [] ( List.map renderTalk all )
         Links ->
-            text "Links"
+            Links.view ()
         Widgets ->
             text "Widgets"
         Survey ->
@@ -71,6 +78,11 @@ renderTalk talk = article [] [
 
 renderMatyjas : () -> Html Msg
 renderMatyjas () = 
-    article [] [ text "Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last few years. Please find a list of them under the" ,
-                     span [ onClick (Change Talks) ] [ text "`Talks`" ],
-                     text "header." ]
+    article [] [ p [] [ text "Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff." ]
+               , p [] [ text "I have presented a number of talks over the last few years. Please find a list of them under the" ,
+                            span [ onClick (Change Talks) ] [ text " | Talks | " ],
+                            text "header." ]
+               , p [] [ text "A typical list of places to find me on the web is under the",
+                            span [ onClick (Change Links) ] [ text " | Links | " ],
+                            text "header." ]
+               ]

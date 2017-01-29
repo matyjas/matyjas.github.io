@@ -343,6 +343,10 @@ require.register("elm/Func.elm", function(exports, require, module) {
 
 });
 
+;require.register("elm/Links.elm", function(exports, require, module) {
+
+});
+
 ;require.register("elm/Main.elm", function(exports, require, module) {
 
 });

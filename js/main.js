@@ -8256,6 +8256,79 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
+var _user$project$Links$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$ul,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$li,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href('https://twitter.com/matyjas'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('@matyjas'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$li,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$a,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href('https://uk.linkedin.com/in/matyjas'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('linkedin/matyjas'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$li,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('github/matyjas'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+
 var _user$project$Talks$all = {
 	ctor: '::',
 	_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017'},
@@ -8376,6 +8449,50 @@ var _user$project$Main$model = _user$project$Main$Matyjas;
 var _user$project$Main$Change = function (a) {
 	return {ctor: 'Change', _0: a};
 };
+var _user$project$Main$navs = function (model) {
+	return A2(
+		_elm_lang$html$Html$h1,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$nav,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_user$project$Main$navSpan,
+						_user$project$Main$Change(_user$project$Main$Matyjas),
+						'Matyjas'),
+					_1: {
+						ctor: '::',
+						_0: _user$project$Main$navSpace(
+							{ctor: '_Tuple0'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_user$project$Main$navSpan,
+								_user$project$Main$Change(_user$project$Main$Talks),
+								'Talks'),
+							_1: {
+								ctor: '::',
+								_0: _user$project$Main$navSpace(
+									{ctor: '_Tuple0'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_user$project$Main$navSpan,
+										_user$project$Main$Change(_user$project$Main$Links),
+										'Links'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
 var _user$project$Main$renderMatyjas = function (_p3) {
 	var _p4 = _p3;
 	return A2(
@@ -8383,25 +8500,74 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff. I have presented a number of talks over the last few years. Please find a list of them under the'),
+			_0: A2(
+				_elm_lang$html$Html$p,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff.'),
+					_1: {ctor: '[]'}
+				}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$span,
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Events$onClick(
-							_user$project$Main$Change(_user$project$Main$Talks)),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('`Talks`'),
-						_1: {ctor: '[]'}
+						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under the'),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(
+										_user$project$Main$Change(_user$project$Main$Talks)),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(' | Talks | '),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('header.'),
+								_1: {ctor: '[]'}
+							}
+						}
 					}),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('header.'),
+					_0: A2(
+						_elm_lang$html$Html$p,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('A typical list of places to find me on the web is under the'),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_user$project$Main$Change(_user$project$Main$Links)),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(' | Links | '),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('header.'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
 					_1: {ctor: '[]'}
 				}
 			}
@@ -8419,7 +8585,8 @@ var _user$project$Main$contentForModel = function (model) {
 				{ctor: '[]'},
 				A2(_elm_lang$core$List$map, _user$project$Main$renderTalk, _user$project$Talks$all));
 		case 'Links':
-			return _elm_lang$html$Html$text('Links');
+			return _user$project$Links$view(
+				{ctor: '_Tuple0'});
 		case 'Widgets':
 			return _elm_lang$html$Html$text('Widgets');
 		case 'Survey':
@@ -8438,36 +8605,7 @@ var _user$project$Main$view = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$h1,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$nav,
-						{ctor: '[]'},
-						{
-							ctor: '::',
-							_0: A2(
-								_user$project$Main$navSpan,
-								_user$project$Main$Change(_user$project$Main$Matyjas),
-								'Matyjas'),
-							_1: {
-								ctor: '::',
-								_0: _user$project$Main$navSpace(
-									{ctor: '_Tuple0'}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_user$project$Main$navSpan,
-										_user$project$Main$Change(_user$project$Main$Talks),
-										'Talks'),
-									_1: {ctor: '[]'}
-								}
-							}
-						}),
-					_1: {ctor: '[]'}
-				}),
+			_0: _user$project$Main$navs(model),
 			_1: {
 				ctor: '::',
 				_0: _user$project$Main$contentForModel(model),
