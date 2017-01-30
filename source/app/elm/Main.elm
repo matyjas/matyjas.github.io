@@ -1,9 +1,9 @@
 module Main exposing (main)
 
 import Html exposing (..)
-import Html.Attributes exposing (id, class)
+import Html.Attributes exposing (id, class, classList)
 import Html.Events exposing (onClick)
-import Talks exposing (Talk, all)
+import Talks
 import Links
 
 main = Html.beginnerProgram { model = model,
@@ -23,9 +23,7 @@ type Msg = Change Model
 
 update : Msg -> Model -> Model
 update msg model =
-    case msg of
-        Change newSection ->
-            newSection
+    extractModel msg
 
 -- VIEW
 
@@ -38,17 +36,19 @@ view model =
 navs : Model -> Html Msg
 navs model =
     h1 [] [ nav [] [
-                 navSpan ( Change Matyjas ) "Matyjas"
+                 navSpan ( Change Matyjas ) "Matyjas" model
                 , navSpace ()
-                , navSpan ( Change Talks ) "Talks"
+                , navSpan ( Change Talks ) "Talks" model
                 , navSpace ()
-                , navSpan ( Change Links ) "Links"
+                , navSpan ( Change Links ) "Links" model
                 ]
           ]
         
-navSpan : Msg -> String -> Html Msg
-navSpan msg label =
-    span [ onClick msg, class "nav" ] [ text label ]
+navSpan : Msg -> String -> Model -> Html Msg
+navSpan msg label model =
+    span [ onClick msg, classList [ ("nav", True)
+                                  , ("selected", selected msg model)]
+         ] [ text label ]
 
 navSpace : () -> Html Msg
 navSpace () =
@@ -60,7 +60,7 @@ contentForModel model =
         Matyjas ->
             renderMatyjas ()
         Talks ->
-            div [] ( List.map renderTalk all )
+            Talks.view ()
         Links ->
             Links.view ()
         Widgets ->
@@ -69,12 +69,6 @@ contentForModel model =
             text "Survey"
         Colophon ->
             text "Colophon"
-
-renderTalk : Talk -> Html Msg
-renderTalk talk = article [] [
-                   h3 [] [text talk.title ],
-                       text "@", text talk.event
-                  ]
 
 renderMatyjas : () -> Html Msg
 renderMatyjas () = 
@@ -86,3 +80,13 @@ renderMatyjas () =
                             span [ onClick (Change Links) ] [ text " | Links | " ],
                             text "header." ]
                ]
+
+        
+extractModel : Msg -> Model
+extractModel msg =
+    case msg of
+        Change model -> model
+
+selected : Msg -> Model -> Bool
+selected msg model =
+    if model == extractModel msg then True else False

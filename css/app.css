@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700");
+@import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700");
 * {
   box-sizing: border-box;
   font-family: Georgia, Times, Courier, Palatino, serif;
@@ -8,7 +8,7 @@
   line-height: 1.5; }
 
 #content {
-  margin: 0 auto;
+  margin: 10 auto;
   max-width: 30em; }
 
 h1 {
@@ -19,15 +19,19 @@ h1 {
   text-align: center; }
 
 .nav {
-  font-family: "Averia Serif Libre", Georgia, Times, Courier, Palatino, serif; }
+  font-family: "Averia Serif Libre", Georgia, Times, Courier, Palatino, serif;
+  font-weight: 300; }
+
+.selected {
+  font-weight: 700; }
 
 a {
-  color: #3f894a;
+  color: #FFCF75;
   text-decoration: none;
   border-bottom: 1px solid transparent; }
   a:hover {
-    color: #27552e;
-    border-bottom: 1px solid #27552e; }
+    color: #FFCF75;
+    border-bottom: 1px solid #555; }
 
 
 

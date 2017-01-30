@@ -8329,6 +8329,31 @@ var _user$project$Links$view = function (model) {
 		});
 };
 
+var _user$project$Talks$renderTalk = function (talk) {
+	return A2(
+		_elm_lang$html$Html$article,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h3,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(talk.title),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('@'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(talk.event),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
 var _user$project$Talks$all = {
 	ctor: '::',
 	_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017'},
@@ -8370,38 +8395,29 @@ var _user$project$Talks$all = {
 		}
 	}
 };
+var _user$project$Talks$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
+};
 var _user$project$Talks$Talk = F2(
 	function (a, b) {
 		return {title: a, event: b};
 	});
 
-var _user$project$Main$renderTalk = function (talk) {
-	return A2(
-		_elm_lang$html$Html$article,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$h3,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text(talk.title),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('@'),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html$text(talk.event),
-					_1: {ctor: '[]'}
-				}
-			}
-		});
+var _user$project$Main$extractModel = function (msg) {
+	var _p0 = msg;
+	return _p0._0;
 };
-var _user$project$Main$navSpace = function (_p0) {
-	var _p1 = _p0;
+var _user$project$Main$selected = F2(
+	function (msg, model) {
+		return _elm_lang$core$Native_Utils.eq(
+			model,
+			_user$project$Main$extractModel(msg)) ? true : false;
+	});
+var _user$project$Main$navSpace = function (_p1) {
+	var _p2 = _p1;
 	return A2(
 		_elm_lang$html$Html$span,
 		{
@@ -8415,8 +8431,8 @@ var _user$project$Main$navSpace = function (_p0) {
 			_1: {ctor: '[]'}
 		});
 };
-var _user$project$Main$navSpan = F2(
-	function (msg, label) {
+var _user$project$Main$navSpan = F3(
+	function (msg, label, model) {
 		return A2(
 			_elm_lang$html$Html$span,
 			{
@@ -8424,7 +8440,20 @@ var _user$project$Main$navSpan = F2(
 				_0: _elm_lang$html$Html_Events$onClick(msg),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('nav'),
+					_0: _elm_lang$html$Html_Attributes$classList(
+						{
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'nav', _1: true},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: 'selected',
+									_1: A2(_user$project$Main$selected, msg, model)
+								},
+								_1: {ctor: '[]'}
+							}
+						}),
 					_1: {ctor: '[]'}
 				}
 			},
@@ -8436,8 +8465,7 @@ var _user$project$Main$navSpan = F2(
 	});
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p2 = msg;
-		return _p2._0;
+		return _user$project$Main$extractModel(msg);
 	});
 var _user$project$Main$Colophon = {ctor: 'Colophon'};
 var _user$project$Main$Survey = {ctor: 'Survey'};
@@ -8460,30 +8488,33 @@ var _user$project$Main$navs = function (model) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: A2(
+					_0: A3(
 						_user$project$Main$navSpan,
 						_user$project$Main$Change(_user$project$Main$Matyjas),
-						'Matyjas'),
+						'Matyjas',
+						model),
 					_1: {
 						ctor: '::',
 						_0: _user$project$Main$navSpace(
 							{ctor: '_Tuple0'}),
 						_1: {
 							ctor: '::',
-							_0: A2(
+							_0: A3(
 								_user$project$Main$navSpan,
 								_user$project$Main$Change(_user$project$Main$Talks),
-								'Talks'),
+								'Talks',
+								model),
 							_1: {
 								ctor: '::',
 								_0: _user$project$Main$navSpace(
 									{ctor: '_Tuple0'}),
 								_1: {
 									ctor: '::',
-									_0: A2(
+									_0: A3(
 										_user$project$Main$navSpan,
 										_user$project$Main$Change(_user$project$Main$Links),
-										'Links'),
+										'Links',
+										model),
 									_1: {ctor: '[]'}
 								}
 							}
@@ -8580,10 +8611,8 @@ var _user$project$Main$contentForModel = function (model) {
 			return _user$project$Main$renderMatyjas(
 				{ctor: '_Tuple0'});
 		case 'Talks':
-			return A2(
-				_elm_lang$html$Html$div,
-				{ctor: '[]'},
-				A2(_elm_lang$core$List$map, _user$project$Main$renderTalk, _user$project$Talks$all));
+			return _user$project$Talks$view(
+				{ctor: '_Tuple0'});
 		case 'Links':
 			return _user$project$Links$view(
 				{ctor: '_Tuple0'});

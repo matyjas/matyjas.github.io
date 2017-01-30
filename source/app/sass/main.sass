@@ -1,17 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700');
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700');
 
 $font-stack: Georgia, Times, Courier, Palatino, serif
+$text-color: #FFCF75
+$bg-color: #555
 
 *
   box-sizing: border-box
   font-family: $font-stack
   font-size: 100%
-  background-color: #555
-  color: #FFCF75
+  background-color: $bg-color
+  color: $text-color
   line-height: 1.5
 
 #content
-  margin: 0 auto      
+  margin: 10 auto      
   max-width: 30em
 
 h1
@@ -23,11 +25,15 @@ h1
     
 .nav
   font-family: 'Averia Serif Libre', $font-stack
+  font-weight: 300
+
+.selected
+  font-weight: 700
 
 a
-  color: #3f894a
+  color: $text-color
   text-decoration: none
   border-bottom: 1px solid rgba(0, 0, 0, 0)
   &:hover
-    color: #27552e
-    border-bottom: 1px solid #27552e
+    color: $text-color
+    border-bottom: 1px solid $bg-color

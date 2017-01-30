@@ -1,4 +1,8 @@
-module Talks exposing (Talk, all)
+module Talks exposing (view)
+
+import Html exposing (..)
+
+-- MODEL
 
 type alias Talk =
     { title : String,
@@ -42,3 +46,17 @@ all = [
 -- http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/
 -- https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-
 -- http://www.techinsight.io/event/london-april-2016/
+
+
+-- VIEW
+
+view : () -> Html msg
+view model =
+    div [] ( List.map renderTalk all )
+
+renderTalk : Talk -> Html msg
+renderTalk talk =
+    article [] [
+         h3 [] [text talk.title ],
+             text "@", text talk.event
+        ]
