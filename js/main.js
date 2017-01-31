@@ -8546,7 +8546,7 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under the'),
+						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under the '),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -8555,16 +8555,20 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Events$onClick(
 										_user$project$Main$Change(_user$project$Main$Talks)),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('nav'),
+										_1: {ctor: '[]'}
+									}
 								},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' | Talks | '),
+									_0: _elm_lang$html$Html$text('Talks'),
 									_1: {ctor: '[]'}
 								}),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('header.'),
+								_0: _elm_lang$html$Html$text(' header.'),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -8576,7 +8580,7 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 						{ctor: '[]'},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('A typical list of places to find me on the web is under the'),
+							_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under the '),
 							_1: {
 								ctor: '::',
 								_0: A2(
@@ -8585,16 +8589,20 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 										ctor: '::',
 										_0: _elm_lang$html$Html_Events$onClick(
 											_user$project$Main$Change(_user$project$Main$Links)),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('nav'),
+											_1: {ctor: '[]'}
+										}
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(' | Links | '),
+										_0: _elm_lang$html$Html$text('Links'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('header.'),
+									_0: _elm_lang$html$Html$text(' header.'),
 									_1: {ctor: '[]'}
 								}
 							}

@@ -30,8 +30,10 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ id "content" ]
-        [ navs model
-        , contentForModel model ]
+        [
+        navs model
+        , contentForModel model
+        ]
 
 navs : Model -> Html Msg
 navs model =
@@ -73,12 +75,14 @@ contentForModel model =
 renderMatyjas : () -> Html Msg
 renderMatyjas () = 
     article [] [ p [] [ text "Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff." ]
-               , p [] [ text "I have presented a number of talks over the last few years. Please find a list of them under the" ,
-                            span [ onClick (Change Talks) ] [ text " | Talks | " ],
-                            text "header." ]
-               , p [] [ text "A typical list of places to find me on the web is under the",
-                            span [ onClick (Change Links) ] [ text " | Links | " ],
-                            text "header." ]
+               , p [] [
+                      text "I have presented a number of talks over the last few years. Please find a list of them under the " ,
+                      span [ onClick (Change Talks), class "nav" ] [ text "Talks" ],
+                      text " header." ]
+               , p [] [
+                      text "The classic list of places to find me on the web is under the ",
+                      span [ onClick (Change Links), class "nav" ] [ text "Links" ],
+                      text " header." ]
                ]
 
         

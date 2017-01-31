@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700");
 * {
   box-sizing: border-box;
-  font-family: Georgia, Times, Courier, Palatino, serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 100%;
-  background-color: #555;
-  color: #FFCF75;
+  background-color: #D4D4D4;
+  color: #555;
   line-height: 1.5; }
 
 #content {
-  margin: 10 auto;
-  max-width: 30em; }
+  margin: 0 auto;
+  max-width: 32em; }
 
 h1 {
   margin-top: 2em;
@@ -19,19 +19,19 @@ h1 {
   text-align: center; }
 
 .nav {
-  font-family: "Averia Serif Libre", Georgia, Times, Courier, Palatino, serif;
+  font-family: "Averia Serif Libre", "Courier New", Courier, monospace;
   font-weight: 300; }
 
 .selected {
   font-weight: 700; }
 
 a {
-  color: #FFCF75;
+  color: #555;
   text-decoration: none;
   border-bottom: 1px solid transparent; }
   a:hover {
-    color: #FFCF75;
-    border-bottom: 1px solid #555; }
+    color: #555;
+    border-bottom: 1px solid #D4D4D4; }
 
 
 
