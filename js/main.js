@@ -8672,7 +8672,7 @@ var _user$project$Main$renderMatyjas = function (_p5) {
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under the '),
+						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under '),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -8689,14 +8689,10 @@ var _user$project$Main$renderMatyjas = function (_p5) {
 								},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Talks'),
+									_0: _elm_lang$html$Html$text('Talks.'),
 									_1: {ctor: '[]'}
 								}),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html$text(' header.'),
-								_1: {ctor: '[]'}
-							}
+							_1: {ctor: '[]'}
 						}
 					}),
 				_1: {
@@ -8706,7 +8702,7 @@ var _user$project$Main$renderMatyjas = function (_p5) {
 						{ctor: '[]'},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under the '),
+							_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under '),
 							_1: {
 								ctor: '::',
 								_0: A2(
@@ -8723,14 +8719,10 @@ var _user$project$Main$renderMatyjas = function (_p5) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('Links'),
+										_0: _elm_lang$html$Html$text('Links.'),
 										_1: {ctor: '[]'}
 									}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(' header.'),
-									_1: {ctor: '[]'}
-								}
+								_1: {ctor: '[]'}
 							}
 						}),
 					_1: {
