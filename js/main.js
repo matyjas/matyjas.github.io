@@ -8406,9 +8406,122 @@ var _user$project$Talks$Talk = F2(
 		return {title: a, event: b};
 	});
 
+var _user$project$Main$renderMeta = function (_p0) {
+	var _p1 = _p0;
+	return A2(
+		_elm_lang$html$Html$article,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$p,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('The source code for this site is on '),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$a,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('github'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(' under the '),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$a,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io/tree/master/source'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('source directory. '),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('I used '),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$a,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$href('http://elm-lang.org/'),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text('elm-lang'),
+												_1: {ctor: '[]'}
+											}),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(' to generate HTML and JS. The site is packaged with '),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$a,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$href('http://brunch.io/'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('brunch. '),
+														_1: {ctor: '[]'}
+													}),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('The heading font is '),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$a,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$href('http://iotic.com/averia/'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('Averia '),
+																_1: {ctor: '[]'}
+															}),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html$text('which has a wonderful story.'),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
 var _user$project$Main$extractModel = function (msg) {
-	var _p0 = msg;
-	return _p0._0;
+	var _p2 = msg;
+	return _p2._0;
 };
 var _user$project$Main$selected = F2(
 	function (msg, model) {
@@ -8416,8 +8529,8 @@ var _user$project$Main$selected = F2(
 			model,
 			_user$project$Main$extractModel(msg)) ? true : false;
 	});
-var _user$project$Main$navSpace = function (_p1) {
-	var _p2 = _p1;
+var _user$project$Main$navSpace = function (_p3) {
+	var _p4 = _p3;
 	return A2(
 		_elm_lang$html$Html$span,
 		{
@@ -8467,7 +8580,7 @@ var _user$project$Main$update = F2(
 	function (msg, model) {
 		return _user$project$Main$extractModel(msg);
 	});
-var _user$project$Main$Colophon = {ctor: 'Colophon'};
+var _user$project$Main$Meta = {ctor: 'Meta'};
 var _user$project$Main$Survey = {ctor: 'Survey'};
 var _user$project$Main$Widgets = {ctor: 'Widgets'};
 var _user$project$Main$Links = {ctor: 'Links'};
@@ -8515,7 +8628,20 @@ var _user$project$Main$navs = function (model) {
 										_user$project$Main$Change(_user$project$Main$Links),
 										'Links',
 										model),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: _user$project$Main$navSpace(
+											{ctor: '_Tuple0'}),
+										_1: {
+											ctor: '::',
+											_0: A3(
+												_user$project$Main$navSpan,
+												_user$project$Main$Change(_user$project$Main$Meta),
+												'Meta',
+												model),
+											_1: {ctor: '[]'}
+										}
+									}
 								}
 							}
 						}
@@ -8524,8 +8650,8 @@ var _user$project$Main$navs = function (model) {
 			_1: {ctor: '[]'}
 		});
 };
-var _user$project$Main$renderMatyjas = function (_p3) {
-	var _p4 = _p3;
+var _user$project$Main$renderMatyjas = function (_p5) {
+	var _p6 = _p5;
 	return A2(
 		_elm_lang$html$Html$article,
 		{ctor: '[]'},
@@ -8607,14 +8733,49 @@ var _user$project$Main$renderMatyjas = function (_p3) {
 								}
 							}
 						}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$p,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Info about how this site was built is under '),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$span,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(
+												_user$project$Main$Change(_user$project$Main$Meta)),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('nav'),
+												_1: {ctor: '[]'}
+											}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Meta'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(' (PS It was fun).'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
 };
 var _user$project$Main$contentForModel = function (model) {
-	var _p5 = model;
-	switch (_p5.ctor) {
+	var _p7 = model;
+	switch (_p7.ctor) {
 		case 'Matyjas':
 			return _user$project$Main$renderMatyjas(
 				{ctor: '_Tuple0'});
@@ -8629,7 +8790,8 @@ var _user$project$Main$contentForModel = function (model) {
 		case 'Survey':
 			return _elm_lang$html$Html$text('Survey');
 		default:
-			return _elm_lang$html$Html$text('Colophon');
+			return _user$project$Main$renderMeta(
+				{ctor: '_Tuple0'});
 	}
 };
 var _user$project$Main$view = function (model) {

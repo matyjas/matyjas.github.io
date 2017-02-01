@@ -1,7 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (..)
-import Html.Attributes exposing (id, class, classList)
+import Html.Attributes exposing (id, class, classList, href)
 import Html.Events exposing (onClick)
 import Talks
 import Links
@@ -12,7 +12,7 @@ main = Html.beginnerProgram { model = model,
 
 -- MODEL
 
-type Model = Matyjas | Talks | Links | Widgets | Survey | Colophon
+type Model = Matyjas | Talks | Links | Widgets | Survey | Meta
 
 model : Model
 model = Matyjas
@@ -43,6 +43,8 @@ navs model =
                 , navSpan ( Change Talks ) "Talks" model
                 , navSpace ()
                 , navSpan ( Change Links ) "Links" model
+                , navSpace ()
+                , navSpan ( Change Meta ) "Meta" model
                 ]
           ]
         
@@ -69,8 +71,8 @@ contentForModel model =
             text "Widgets"
         Survey ->
             text "Survey"
-        Colophon ->
-            text "Colophon"
+        Meta ->
+            renderMeta ()
 
 renderMatyjas : () -> Html Msg
 renderMatyjas () = 
@@ -83,6 +85,11 @@ renderMatyjas () =
                       text "The classic list of places to find me on the web is under the ",
                       span [ onClick (Change Links), class "nav" ] [ text "Links" ],
                       text " header." ]
+               , p [] [
+                      text "Info about how this site was built is under "
+                     , span [ onClick (Change Meta), class "nav" ] [ text "Meta" ]
+                     , text " (PS It was fun)."
+                     ]
                ]
 
         
@@ -94,3 +101,20 @@ extractModel msg =
 selected : Msg -> Model -> Bool
 selected msg model =
     if model == extractModel msg then True else False
+
+renderMeta : () -> Html Msg
+renderMeta () =
+    article [] [
+         p [] [ text "The source code for this site is on "
+              , a [ href "https://github.com/matyjas/matyjas.github.io" ] [ text "github" ]
+              , text " under the "
+              , a [ href "https://github.com/matyjas/matyjas.github.io/tree/master/source" ] [ text "source directory. " ]
+              , text "I used "
+              , a [ href "http://elm-lang.org/" ] [ text "elm-lang" ]
+              , text " to generate HTML and JS. The site is packaged with "
+              , a [ href "http://brunch.io/" ] [ text "brunch. " ]
+              , text "The heading font is "
+              , a [ href "http://iotic.com/averia/" ] [ text "Averia " ]
+              , text "which has a wonderful story."
+              ]
+         ]
