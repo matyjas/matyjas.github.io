@@ -111,10 +111,12 @@ renderMeta () =
               , a [ href "https://github.com/matyjas/matyjas.github.io/tree/master/source" ] [ text "source directory. " ]
               , text "I used "
               , a [ href "http://elm-lang.org/" ] [ text "elm-lang" ]
-              , text " to generate HTML and JS. The site is packaged with "
+              , text " to generate HTML and JS; "
+              , a [ href "http://sass-lang.com/" ] [ text "sass" ]
+              , text " to generate CSS. The site is packaged with "
               , a [ href "http://brunch.io/" ] [ text "brunch. " ]
-              , text "The heading font is "
+              , text "The heading typeface is "
               , a [ href "http://iotic.com/averia/" ] [ text "Averia " ]
-              , text "which has a wonderful story."
+              , text "which has a wonderful story. The body typeface is a classic, Gill Sans."
               ]
          ]

@@ -8469,42 +8469,61 @@ var _user$project$Main$renderMeta = function (_p0) {
 											}),
 										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html$text(' to generate HTML and JS. The site is packaged with '),
+											_0: _elm_lang$html$Html$text(' to generate HTML and JS; '),
 											_1: {
 												ctor: '::',
 												_0: A2(
 													_elm_lang$html$Html$a,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$href('http://brunch.io/'),
+														_0: _elm_lang$html$Html_Attributes$href('http://sass-lang.com/'),
 														_1: {ctor: '[]'}
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('brunch. '),
+														_0: _elm_lang$html$Html$text('sass'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('The heading font is '),
+													_0: _elm_lang$html$Html$text(' to generate CSS. The site is packaged with '),
 													_1: {
 														ctor: '::',
 														_0: A2(
 															_elm_lang$html$Html$a,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$href('http://iotic.com/averia/'),
+																_0: _elm_lang$html$Html_Attributes$href('http://brunch.io/'),
 																_1: {ctor: '[]'}
 															},
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html$text('Averia '),
+																_0: _elm_lang$html$Html$text('brunch. '),
 																_1: {ctor: '[]'}
 															}),
 														_1: {
 															ctor: '::',
-															_0: _elm_lang$html$Html$text('which has a wonderful story.'),
-															_1: {ctor: '[]'}
+															_0: _elm_lang$html$Html$text('The heading typeface is '),
+															_1: {
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$a,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$href('http://iotic.com/averia/'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text('Averia '),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html$text('which has a wonderful story. The body typeface is a classic, Gill Sans.'),
+																	_1: {ctor: '[]'}
+																}
+															}
 														}
 													}
 												}

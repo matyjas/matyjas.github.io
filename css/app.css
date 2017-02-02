@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700");
 * {
   box-sizing: border-box;
-  font-family: Courier, "Courier New", monospace;
+  font-family: "Gill Sans", Courier, "Courier New", monospace;
   font-size: 100%;
   background-color: #D4D4D4;
   color: #555;
@@ -19,7 +19,7 @@ h1 {
   text-align: center; }
 
 .nav {
-  font-family: "Averia Serif Libre", Courier, "Courier New", monospace;
+  font-family: "Averia Serif Libre", "Gill Sans", Courier, "Courier New", monospace;
   font-weight: 300; }
 
 .selected {
