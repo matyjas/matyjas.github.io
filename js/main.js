@@ -8773,7 +8773,7 @@ var _user$project$Main$renderMatyjas = function (_p5) {
 										}),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html$text(' (PS It was fun).'),
+										_0: _elm_lang$html$Html$text(' (PS It was fun!).'),
 										_1: {ctor: '[]'}
 									}
 								}

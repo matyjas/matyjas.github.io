@@ -88,7 +88,7 @@ renderMatyjas () =
                , p [] [
                       text "Info about how this site was built is under "
                      , span [ onClick (Change Meta), class "nav" ] [ text "Meta" ]
-                     , text " (PS It was fun)."
+                     , text " (PS It was fun!)."
                      ]
                ]
 
