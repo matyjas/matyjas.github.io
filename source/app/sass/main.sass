@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700');
 
-$font-stack: "Gill Sans", sans-serif;
+$body-type-stack: "Gill Sans", Helvetica, Arial, sans-serif;
+$headline-type-stack: Georgia, serif;
 $text-color: #555
 $bg-color: #D4D4D4
 
 *
   box-sizing: border-box
-  font-family: $font-stack
+  font-family: $body-type-stack
   font-size: 100%
   background-color: $bg-color
   color: $text-color
@@ -17,19 +17,20 @@ $bg-color: #D4D4D4
   max-width: 32em
 
 h1
-  margin-top: 2em
-  height: 75px
-  margin-bottom: 0.5em
+  margin-top: 1.5em
+  //height: 75px
+  margin-bottom: 1.25em
   font-size: 1.5em
   text-align: center
     
 .nav
-  font-family: 'Averia Serif Libre', $font-stack
+  font-family: $headline-type-stack
   font-weight: 300
 
 .selected
   font-weight: 700
-
+  letter-spacing: 0.1em
+  
 a
   color: $text-color
   text-decoration: none
