@@ -115,8 +115,5 @@ renderMeta () =
               , a [ href "http://sass-lang.com/" ] [ text "sass" ]
               , text " to generate CSS. The site is packaged with "
               , a [ href "http://brunch.io/" ] [ text "brunch. " ]
-              , text "The heading typeface is "
-              , a [ href "http://iotic.com/averia/" ] [ text "Averia " ]
-              , text "which has a wonderful story. The body typeface is a classic, Gill Sans."
               ]
          ]

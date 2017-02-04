@@ -8501,30 +8501,7 @@ var _user$project$Main$renderMeta = function (_p0) {
 																_0: _elm_lang$html$Html$text('brunch. '),
 																_1: {ctor: '[]'}
 															}),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html$text('The heading typeface is '),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$a,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$href('http://iotic.com/averia/'),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Averia '),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('which has a wonderful story. The body typeface is a classic, Gill Sans.'),
-																	_1: {ctor: '[]'}
-																}
-															}
-														}
+														_1: {ctor: '[]'}
 													}
 												}
 											}
