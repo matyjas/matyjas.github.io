@@ -1,29 +1,52 @@
 module Main exposing (main)
 
+import RouteUrl exposing (RouteUrlProgram)
+import Navigation exposing (Location)
+import RouteUrl exposing (UrlChange)
+
 import Html exposing (..)
 import Html.Attributes exposing (id, class, classList, href)
 import Html.Events exposing (onClick)
 import Talks
 import Links
 
+{-|
 main = Html.beginnerProgram { model = model,
                               view = view,
                               update = update }
+-}
+
+main : RouteUrlProgram Never Model Msg
+main =
+    RouteUrl.program
+    { delta2url = delta2url
+    , location2messages = location2messages
+    , update = update
+    , view = view
+    , init = init
+    , subscriptions = subscriptions
+    }
 
 -- MODEL
 
 type Model = Matyjas | Talks | Links | Widgets | Survey | Meta
 
-model : Model
-model = Matyjas
+-- model : Model
+-- model = Matyjas
+
+-- INIT
+
+init : (Model, Cmd Msg)
+init =
+    (Matyjas, Cmd.none)
 
 -- UPDATE
 
 type Msg = Change Model
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    extractModel msg
+    ( extractModel msg, Cmd.none )
 
 -- VIEW
 
@@ -117,3 +140,28 @@ renderMeta () =
               , a [ href "http://brunch.io/" ] [ text "brunch. " ]
               ]
          ]
+
+-- Subs
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
+
+-- Routing
+
+
+location2messages : Location -> List Msg
+location2messages location =
+    case (hashSuffix location) of
+        Just "survey" -> [ Change Survey ]
+        Just _ -> [ Change Matyjas ]
+        Nothing -> [Change Matyjas ]
+
+        
+delta2url : Model -> Model -> Maybe UrlChange
+delta2url previous current =
+    Nothing
+
+hashSuffix : Location -> Maybe String
+hashSuffix location =
+    List.head (List.drop 1 (String.split "#" location.href))
