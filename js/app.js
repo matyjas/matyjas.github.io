@@ -351,6 +351,10 @@ require.register("elm/Func.elm", function(exports, require, module) {
 
 });
 
+;require.register("elm/Survey.elm", function(exports, require, module) {
+
+});
+
 ;require.register("elm/Talks.elm", function(exports, require, module) {
 
 });

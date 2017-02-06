@@ -9,12 +9,7 @@ import Html.Attributes exposing (id, class, classList, href)
 import Html.Events exposing (onClick)
 import Talks
 import Links
-
-{-|
-main = Html.beginnerProgram { model = model,
-                              view = view,
-                              update = update }
--}
+import Survey
 
 main : RouteUrlProgram Never Model Msg
 main =
@@ -30,9 +25,6 @@ main =
 -- MODEL
 
 type Model = Matyjas | Talks | Links | Widgets | Survey | Meta
-
--- model : Model
--- model = Matyjas
 
 -- INIT
 
@@ -93,7 +85,7 @@ contentForModel model =
         Widgets ->
             text "Widgets"
         Survey ->
-            text "Survey"
+            Survey.view ()
         Meta ->
             renderMeta ()
 

@@ -10725,6 +10725,21 @@ var _user$project$Talks$Talk = F2(
 		return {title: a, event: b};
 	});
 
+var _user$project$Survey$typeformLink = '<a class=\'typeform-share link\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, server up by the wonderful Typeform</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}})()</script>';
+var _user$project$Survey$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html_Attributes$property,
+				'innerHTML',
+				_elm_lang$core$Json_Encode$string(_user$project$Survey$typeformLink)),
+			_1: {ctor: '[]'}
+		},
+		{ctor: '[]'});
+};
+
 var _user$project$Main$hashSuffix = function (location) {
 	return _elm_lang$core$List$head(
 		A2(
@@ -11113,7 +11128,8 @@ var _user$project$Main$contentForModel = function (model) {
 		case 'Widgets':
 			return _elm_lang$html$Html$text('Widgets');
 		case 'Survey':
-			return _elm_lang$html$Html$text('Survey');
+			return _user$project$Survey$view(
+				{ctor: '_Tuple0'});
 		default:
 			return _user$project$Main$renderMeta(
 				{ctor: '_Tuple0'});
