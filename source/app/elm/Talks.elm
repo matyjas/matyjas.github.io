@@ -50,8 +50,8 @@ all = [
 
 -- VIEW
 
-view : () -> Html msg
-view model =
+view : Html msg
+view =
     div [] ( List.map renderTalk all )
 
 renderTalk : Talk -> Html msg

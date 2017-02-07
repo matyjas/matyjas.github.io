@@ -5,8 +5,8 @@ import Html.Attributes exposing (href)
 
 -- VIEW
 
-view : () -> Html msg
-view model =
+view : Html msg
+view =
     ul [] [
          li [] [ a [ href "https://twitter.com/matyjas" ] [ text "@matyjas" ] ]
         , li [] [ a [ href "https://uk.linkedin.com/in/matyjas" ] [ text "linkedin/matyjas" ] ]

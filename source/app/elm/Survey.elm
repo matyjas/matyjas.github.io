@@ -6,10 +6,11 @@ import Json.Encode exposing (string)
 
 -- View
 
-view : () -> Html msg
-view model =
-      div [ property  "innerHTML" <| string typeformLink  ] []
+view : Html msg
+view =
+    div [ property  "innerHTML" <| string typeformButton ] []
 
-typeformLink : String
-typeformLink =
-    "<a class='typeform-share link' href='https://matyjas.typeform.com/to/dXro9E' data-mode='1' target='_blank'>Super presentation survey under here, server up by the wonderful Typeform</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm_share',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>"
+typeformButton : String
+typeformButton =
+    "<a class='typeform-share button' href='https://matyjas.typeform.com/to/dXro9E' data-mode='1' target='_blank'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm_share',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>"
+        

@@ -10575,11 +10575,154 @@ var _rgrempel$elm_route_url$RouteUrl$programWithFlags = function (_p23) {
 		_rgrempel$elm_route_url$RouteUrl$navigationAppWithFlags(_p23));
 };
 
-var _user$project$Links$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$ul,
-		{ctor: '[]'},
-		{
+var _user$project$Types$Meta = {ctor: 'Meta'};
+var _user$project$Types$Survey = {ctor: 'Survey'};
+var _user$project$Types$Widgets = {ctor: 'Widgets'};
+var _user$project$Types$Links = {ctor: 'Links'};
+var _user$project$Types$Talks = {ctor: 'Talks'};
+var _user$project$Types$Here = {ctor: 'Here'};
+var _user$project$Types$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
+
+var _user$project$Here$view = A2(
+	_elm_lang$html$Html$article,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$p,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff.'),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$p,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under '),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$span,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(
+									_user$project$Types$Change(_user$project$Types$Talks)),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('nav'),
+									_1: {ctor: '[]'}
+								}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Talks.'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$p,
+					{ctor: '[]'},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(
+										_user$project$Types$Change(_user$project$Types$Links)),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('nav'),
+										_1: {ctor: '[]'}
+									}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Links.'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$p,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Info about how this site was built is under '),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_user$project$Types$Change(_user$project$Types$Meta)),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('nav'),
+											_1: {ctor: '[]'}
+										}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Meta'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(' (PS It was fun!).'),
+									_1: {ctor: '[]'}
+								}
+							}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	});
+
+var _user$project$Links$view = A2(
+	_elm_lang$html$Html$ul,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$li,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$a,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$href('https://twitter.com/matyjas'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('@matyjas'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}),
+		_1: {
 			ctor: '::',
 			_0: A2(
 				_elm_lang$html$Html$li,
@@ -10590,12 +10733,12 @@ var _user$project$Links$view = function (model) {
 						_elm_lang$html$Html$a,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$href('https://twitter.com/matyjas'),
+							_0: _elm_lang$html$Html_Attributes$href('https://uk.linkedin.com/in/matyjas'),
 							_1: {ctor: '[]'}
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('@matyjas'),
+							_0: _elm_lang$html$Html$text('linkedin/matyjas'),
 							_1: {ctor: '[]'}
 						}),
 					_1: {ctor: '[]'}
@@ -10611,42 +10754,20 @@ var _user$project$Links$view = function (model) {
 							_elm_lang$html$Html$a,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$href('https://uk.linkedin.com/in/matyjas'),
+								_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas'),
 								_1: {ctor: '[]'}
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('linkedin/matyjas'),
+								_0: _elm_lang$html$Html$text('github/matyjas'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$li,
-						{ctor: '[]'},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$a,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('github/matyjas'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
+				_1: {ctor: '[]'}
 			}
-		});
-};
+		}
+	});
 
 var _user$project$Talks$renderTalk = function (talk) {
 	return A2(
@@ -10714,31 +10835,134 @@ var _user$project$Talks$all = {
 		}
 	}
 };
-var _user$project$Talks$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{ctor: '[]'},
-		A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
-};
+var _user$project$Talks$view = A2(
+	_elm_lang$html$Html$div,
+	{ctor: '[]'},
+	A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
 var _user$project$Talks$Talk = F2(
 	function (a, b) {
 		return {title: a, event: b};
 	});
 
-var _user$project$Survey$typeformLink = '<a class=\'typeform-share link\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, server up by the wonderful Typeform</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}})()</script>';
-var _user$project$Survey$view = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html_Attributes$property,
-				'innerHTML',
-				_elm_lang$core$Json_Encode$string(_user$project$Survey$typeformLink)),
-			_1: {ctor: '[]'}
-		},
-		{ctor: '[]'});
-};
+var _user$project$Survey$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}id=id+\'_\';if(!gi.call(d,id)){qs=ce.call(d,\'link\');qs.rel=\'stylesheet\';qs.id=id;qs.href=b+\'share-button.css\';s=gt.call(d,\'head\')[0];s.appendChild(qs,s)}})()</script>';
+var _user$project$Survey$view = A2(
+	_elm_lang$html$Html$div,
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html_Attributes$property,
+			'innerHTML',
+			_elm_lang$core$Json_Encode$string(_user$project$Survey$typeformButton)),
+		_1: {ctor: '[]'}
+	},
+	{ctor: '[]'});
+
+var _user$project$Meta$view = A2(
+	_elm_lang$html$Html$article,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html$p,
+			{ctor: '[]'},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('The source code for this site is on '),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('github'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(' under the '),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io/tree/master/source'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('source directory. '),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('I used '),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$a,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$href('http://elm-lang.org/'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('elm-lang'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(' to generate HTML and JS; '),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$a,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$href('http://sass-lang.com/'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('sass'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html$text(' to generate CSS. The site is packaged with '),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$a,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$href('http://brunch.io/'),
+															_1: {ctor: '[]'}
+														},
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html$text('brunch. '),
+															_1: {ctor: '[]'}
+														}),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}),
+		_1: {ctor: '[]'}
+	});
 
 var _user$project$Main$hashSuffix = function (location) {
 	return _elm_lang$core$List$head(
@@ -10751,121 +10975,36 @@ var _user$project$Main$delta2url = F2(
 	function (previous, current) {
 		return _elm_lang$core$Maybe$Nothing;
 	});
+var _user$project$Main$location2messages = function (location) {
+	var _p0 = _user$project$Main$hashSuffix(location);
+	if (_p0.ctor === 'Just') {
+		if (_p0._0 === 'survey') {
+			return {
+				ctor: '::',
+				_0: _user$project$Types$Change(_user$project$Types$Survey),
+				_1: {ctor: '[]'}
+			};
+		} else {
+			return {
+				ctor: '::',
+				_0: _user$project$Types$Change(_user$project$Types$Here),
+				_1: {ctor: '[]'}
+			};
+		}
+	} else {
+		return {
+			ctor: '::',
+			_0: _user$project$Types$Change(_user$project$Types$Here),
+			_1: {ctor: '[]'}
+		};
+	}
+};
 var _user$project$Main$subscriptions = function (model) {
 	return _elm_lang$core$Platform_Sub$none;
 };
-var _user$project$Main$renderMeta = function (_p0) {
-	var _p1 = _p0;
-	return A2(
-		_elm_lang$html$Html$article,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$p,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('The source code for this site is on '),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$a,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io'),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('github'),
-								_1: {ctor: '[]'}
-							}),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html$text(' under the '),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$a,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas/matyjas.github.io/tree/master/source'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('source directory. '),
-										_1: {ctor: '[]'}
-									}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('I used '),
-									_1: {
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$a,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$href('http://elm-lang.org/'),
-												_1: {ctor: '[]'}
-											},
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html$text('elm-lang'),
-												_1: {ctor: '[]'}
-											}),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html$text(' to generate HTML and JS; '),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$a,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$href('http://sass-lang.com/'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html$text('sass'),
-														_1: {ctor: '[]'}
-													}),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html$text(' to generate CSS. The site is packaged with '),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$a,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$href('http://brunch.io/'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('brunch. '),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}),
-			_1: {ctor: '[]'}
-		});
-};
 var _user$project$Main$extractModel = function (msg) {
-	var _p2 = msg;
-	return _p2._0;
+	var _p1 = msg;
+	return _p1._0;
 };
 var _user$project$Main$selected = F2(
 	function (msg, model) {
@@ -10873,6 +11012,23 @@ var _user$project$Main$selected = F2(
 			model,
 			_user$project$Main$extractModel(msg)) ? true : false;
 	});
+var _user$project$Main$contentForModel = function (model) {
+	var _p2 = model;
+	switch (_p2.ctor) {
+		case 'Here':
+			return _user$project$Here$view;
+		case 'Talks':
+			return _user$project$Talks$view;
+		case 'Links':
+			return _user$project$Links$view;
+		case 'Widgets':
+			return _elm_lang$html$Html$text('Widgets');
+		case 'Survey':
+			return _user$project$Survey$view;
+		default:
+			return _user$project$Meta$view;
+	}
+};
 var _user$project$Main$navSpace = function (_p3) {
 	var _p4 = _p3;
 	return A2(
@@ -10920,24 +11076,6 @@ var _user$project$Main$navSpan = F3(
 				_1: {ctor: '[]'}
 			});
 	});
-var _user$project$Main$update = F2(
-	function (msg, model) {
-		return {
-			ctor: '_Tuple2',
-			_0: _user$project$Main$extractModel(msg),
-			_1: _elm_lang$core$Platform_Cmd$none
-		};
-	});
-var _user$project$Main$Meta = {ctor: 'Meta'};
-var _user$project$Main$Survey = {ctor: 'Survey'};
-var _user$project$Main$Widgets = {ctor: 'Widgets'};
-var _user$project$Main$Links = {ctor: 'Links'};
-var _user$project$Main$Talks = {ctor: 'Talks'};
-var _user$project$Main$Matyjas = {ctor: 'Matyjas'};
-var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$Matyjas, _1: _elm_lang$core$Platform_Cmd$none};
-var _user$project$Main$Change = function (a) {
-	return {ctor: 'Change', _0: a};
-};
 var _user$project$Main$navs = function (model) {
 	return A2(
 		_elm_lang$html$Html$h1,
@@ -10951,8 +11089,8 @@ var _user$project$Main$navs = function (model) {
 					ctor: '::',
 					_0: A3(
 						_user$project$Main$navSpan,
-						_user$project$Main$Change(_user$project$Main$Matyjas),
-						'Matyjas',
+						_user$project$Types$Change(_user$project$Types$Here),
+						'Here',
 						model),
 					_1: {
 						ctor: '::',
@@ -10962,7 +11100,7 @@ var _user$project$Main$navs = function (model) {
 							ctor: '::',
 							_0: A3(
 								_user$project$Main$navSpan,
-								_user$project$Main$Change(_user$project$Main$Talks),
+								_user$project$Types$Change(_user$project$Types$Talks),
 								'Talks',
 								model),
 							_1: {
@@ -10973,7 +11111,7 @@ var _user$project$Main$navs = function (model) {
 									ctor: '::',
 									_0: A3(
 										_user$project$Main$navSpan,
-										_user$project$Main$Change(_user$project$Main$Links),
+										_user$project$Types$Change(_user$project$Types$Links),
 										'Links',
 										model),
 									_1: {
@@ -10984,10 +11122,23 @@ var _user$project$Main$navs = function (model) {
 											ctor: '::',
 											_0: A3(
 												_user$project$Main$navSpan,
-												_user$project$Main$Change(_user$project$Main$Meta),
-												'Meta',
+												_user$project$Types$Change(_user$project$Types$Survey),
+												'Survey',
 												model),
-											_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: _user$project$Main$navSpace(
+													{ctor: '_Tuple0'}),
+												_1: {
+													ctor: '::',
+													_0: A3(
+														_user$project$Main$navSpan,
+														_user$project$Types$Change(_user$project$Types$Meta),
+														'Meta',
+														model),
+													_1: {ctor: '[]'}
+												}
+											}
 										}
 									}
 								}
@@ -10997,143 +11148,6 @@ var _user$project$Main$navs = function (model) {
 				}),
 			_1: {ctor: '[]'}
 		});
-};
-var _user$project$Main$renderMatyjas = function (_p5) {
-	var _p6 = _p5;
-	return A2(
-		_elm_lang$html$Html$article,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$p,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('Hi! Thanks for visiting! My name is Maciej Matyjas and here is a list of my stuff.'),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$p,
-					{ctor: '[]'},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under '),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$span,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(
-										_user$project$Main$Change(_user$project$Main$Talks)),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('nav'),
-										_1: {ctor: '[]'}
-									}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('Talks.'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}
-					}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$p,
-						{ctor: '[]'},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under '),
-							_1: {
-								ctor: '::',
-								_0: A2(
-									_elm_lang$html$Html$span,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Main$Change(_user$project$Main$Links)),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('nav'),
-											_1: {ctor: '[]'}
-										}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Links.'),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
-							}
-						}),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$p,
-							{ctor: '[]'},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Info about how this site was built is under '),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$span,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(
-												_user$project$Main$Change(_user$project$Main$Meta)),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('nav'),
-												_1: {ctor: '[]'}
-											}
-										},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Meta'),
-											_1: {ctor: '[]'}
-										}),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html$text(' (PS It was fun!).'),
-										_1: {ctor: '[]'}
-									}
-								}
-							}),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		});
-};
-var _user$project$Main$contentForModel = function (model) {
-	var _p7 = model;
-	switch (_p7.ctor) {
-		case 'Matyjas':
-			return _user$project$Main$renderMatyjas(
-				{ctor: '_Tuple0'});
-		case 'Talks':
-			return _user$project$Talks$view(
-				{ctor: '_Tuple0'});
-		case 'Links':
-			return _user$project$Links$view(
-				{ctor: '_Tuple0'});
-		case 'Widgets':
-			return _elm_lang$html$Html$text('Widgets');
-		case 'Survey':
-			return _user$project$Survey$view(
-				{ctor: '_Tuple0'});
-		default:
-			return _user$project$Main$renderMeta(
-				{ctor: '_Tuple0'});
-	}
 };
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -11153,30 +11167,15 @@ var _user$project$Main$view = function (model) {
 			}
 		});
 };
-var _user$project$Main$location2messages = function (location) {
-	var _p8 = _user$project$Main$hashSuffix(location);
-	if (_p8.ctor === 'Just') {
-		if (_p8._0 === 'survey') {
-			return {
-				ctor: '::',
-				_0: _user$project$Main$Change(_user$project$Main$Survey),
-				_1: {ctor: '[]'}
-			};
-		} else {
-			return {
-				ctor: '::',
-				_0: _user$project$Main$Change(_user$project$Main$Matyjas),
-				_1: {ctor: '[]'}
-			};
-		}
-	} else {
+var _user$project$Main$update = F2(
+	function (msg, model) {
 		return {
-			ctor: '::',
-			_0: _user$project$Main$Change(_user$project$Main$Matyjas),
-			_1: {ctor: '[]'}
+			ctor: '_Tuple2',
+			_0: _user$project$Main$extractModel(msg),
+			_1: _elm_lang$core$Platform_Cmd$none
 		};
-	}
-};
+	});
+var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Types$Here, _1: _elm_lang$core$Platform_Cmd$none};
 var _user$project$Main$main = _rgrempel$elm_route_url$RouteUrl$program(
 	{delta2url: _user$project$Main$delta2url, location2messages: _user$project$Main$location2messages, update: _user$project$Main$update, view: _user$project$Main$view, init: _user$project$Main$init, subscriptions: _user$project$Main$subscriptions})();
 
