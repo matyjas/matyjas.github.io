@@ -10575,8 +10575,21 @@ var _rgrempel$elm_route_url$RouteUrl$programWithFlags = function (_p23) {
 		_rgrempel$elm_route_url$RouteUrl$navigationAppWithFlags(_p23));
 };
 
+var _user$project$Feedback$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}id=id+\'_\';if(!gi.call(d,id)){qs=ce.call(d,\'link\');qs.rel=\'stylesheet\';qs.id=id;qs.href=b+\'share-button.css\';s=gt.call(d,\'head\')[0];s.appendChild(qs,s)}})()</script>';
+var _user$project$Feedback$view = A2(
+	_elm_lang$html$Html$div,
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$html$Html_Attributes$property,
+			'innerHTML',
+			_elm_lang$core$Json_Encode$string(_user$project$Feedback$typeformButton)),
+		_1: {ctor: '[]'}
+	},
+	{ctor: '[]'});
+
 var _user$project$Types$Meta = {ctor: 'Meta'};
-var _user$project$Types$Survey = {ctor: 'Survey'};
+var _user$project$Types$Feedback = {ctor: 'Feedback'};
 var _user$project$Types$Widgets = {ctor: 'Widgets'};
 var _user$project$Types$Links = {ctor: 'Links'};
 var _user$project$Types$Talks = {ctor: 'Talks'};
@@ -10844,19 +10857,6 @@ var _user$project$Talks$Talk = F2(
 		return {title: a, event: b};
 	});
 
-var _user$project$Survey$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}id=id+\'_\';if(!gi.call(d,id)){qs=ce.call(d,\'link\');qs.rel=\'stylesheet\';qs.id=id;qs.href=b+\'share-button.css\';s=gt.call(d,\'head\')[0];s.appendChild(qs,s)}})()</script>';
-var _user$project$Survey$view = A2(
-	_elm_lang$html$Html$div,
-	{
-		ctor: '::',
-		_0: A2(
-			_elm_lang$html$Html_Attributes$property,
-			'innerHTML',
-			_elm_lang$core$Json_Encode$string(_user$project$Survey$typeformButton)),
-		_1: {ctor: '[]'}
-	},
-	{ctor: '[]'});
-
 var _user$project$Meta$view = A2(
 	_elm_lang$html$Html$article,
 	{ctor: '[]'},
@@ -10978,10 +10978,10 @@ var _user$project$Main$delta2url = F2(
 var _user$project$Main$location2messages = function (location) {
 	var _p0 = _user$project$Main$hashSuffix(location);
 	if (_p0.ctor === 'Just') {
-		if (_p0._0 === 'survey') {
+		if (_p0._0 === 'feedback') {
 			return {
 				ctor: '::',
-				_0: _user$project$Types$Change(_user$project$Types$Survey),
+				_0: _user$project$Types$Change(_user$project$Types$Feedback),
 				_1: {ctor: '[]'}
 			};
 		} else {
@@ -11023,8 +11023,8 @@ var _user$project$Main$contentForModel = function (model) {
 			return _user$project$Links$view;
 		case 'Widgets':
 			return _elm_lang$html$Html$text('Widgets');
-		case 'Survey':
-			return _user$project$Survey$view;
+		case 'Feedback':
+			return _user$project$Feedback$view;
 		default:
 			return _user$project$Meta$view;
 	}
@@ -11122,8 +11122,8 @@ var _user$project$Main$navs = function (model) {
 											ctor: '::',
 											_0: A3(
 												_user$project$Main$navSpan,
-												_user$project$Types$Change(_user$project$Types$Survey),
-												'Survey',
+												_user$project$Types$Change(_user$project$Types$Feedback),
+												'Feedback',
 												model),
 											_1: {
 												ctor: '::',

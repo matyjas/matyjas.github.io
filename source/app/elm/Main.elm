@@ -12,7 +12,7 @@ import Types exposing (..)
 
 import Talks
 import Links
-import Survey
+import Feedback
 import Meta
 import Here
 
@@ -60,7 +60,7 @@ navs model =
                 , navSpace ()
                 , navSpan ( Change Links ) "Links" model
                 , navSpace ()
-                , navSpan ( Change Survey ) "Survey" model
+                , navSpan ( Change Feedback ) "Feedback" model
                 , navSpace ()
                 , navSpan ( Change Meta ) "Meta" model
                 ]
@@ -87,8 +87,8 @@ contentForModel model =
             Links.view
         Widgets ->
             text "Widgets"
-        Survey ->
-            Survey.view
+        Feedback ->
+            Feedback.view
         Meta ->
             Meta.view
         
@@ -112,7 +112,7 @@ subscriptions model =
 location2messages : Location -> List Msg
 location2messages location =
     case (hashSuffix location) of
-        Just "survey" -> [ Change Survey ]
+        Just "feedback" -> [ Change Feedback ]
         Just _ -> [ Change Here ]
         Nothing -> [Change Here ]
 

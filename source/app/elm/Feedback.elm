@@ -1,4 +1,4 @@
-module Survey exposing (view)
+module Feedback exposing (view)
 
 import Html exposing (Html, div)
 import Html.Attributes exposing (property, attribute, style)

@@ -1,6 +1,6 @@
 module Types exposing (..)
 
-type Model = Here | Talks | Links | Widgets | Survey | Meta
+type Model = Here | Talks | Links | Widgets | Feedback | Meta
 
 type Msg = Change Model
 
