@@ -10978,18 +10978,37 @@ var _user$project$Main$delta2url = F2(
 var _user$project$Main$location2messages = function (location) {
 	var _p0 = _user$project$Main$hashSuffix(location);
 	if (_p0.ctor === 'Just') {
-		if (_p0._0 === 'feedback') {
-			return {
-				ctor: '::',
-				_0: _user$project$Types$Change(_user$project$Types$Feedback),
-				_1: {ctor: '[]'}
-			};
-		} else {
-			return {
-				ctor: '::',
-				_0: _user$project$Types$Change(_user$project$Types$Here),
-				_1: {ctor: '[]'}
-			};
+		switch (_p0._0) {
+			case 'talks':
+				return {
+					ctor: '::',
+					_0: _user$project$Types$Change(_user$project$Types$Talks),
+					_1: {ctor: '[]'}
+				};
+			case 'links':
+				return {
+					ctor: '::',
+					_0: _user$project$Types$Change(_user$project$Types$Links),
+					_1: {ctor: '[]'}
+				};
+			case 'feedback':
+				return {
+					ctor: '::',
+					_0: _user$project$Types$Change(_user$project$Types$Feedback),
+					_1: {ctor: '[]'}
+				};
+			case 'meta':
+				return {
+					ctor: '::',
+					_0: _user$project$Types$Change(_user$project$Types$Meta),
+					_1: {ctor: '[]'}
+				};
+			default:
+				return {
+					ctor: '::',
+					_0: _user$project$Types$Change(_user$project$Types$Here),
+					_1: {ctor: '[]'}
+				};
 		}
 	} else {
 		return {

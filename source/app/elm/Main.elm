@@ -112,7 +112,10 @@ subscriptions model =
 location2messages : Location -> List Msg
 location2messages location =
     case (hashSuffix location) of
+        Just "talks" -> [ Change Talks ]
+        Just "links" -> [ Change Links ]
         Just "feedback" -> [ Change Feedback ]
+        Just "meta" -> [ Change Meta ]
         Just _ -> [ Change Here ]
         Nothing -> [Change Here ]
 
