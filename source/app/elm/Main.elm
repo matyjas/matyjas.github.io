@@ -123,4 +123,6 @@ delta2url previous current =
 
 hashSuffix : Location -> Maybe String
 hashSuffix location =
-    List.head (List.drop 1 (String.split "#" location.href))
+    String.split "#" location.href
+        |> List.drop 1 
+        |> List.head 
