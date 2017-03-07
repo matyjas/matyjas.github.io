@@ -1,13 +1,13 @@
 module Meta exposing (view)
 
 import Html exposing (..)
-import Html.Attributes exposing (href)
+import Html.Attributes exposing (href, id)
 
 -- VIEW
 
 view : Html msg
 view =
-    article [] [
+    article [id "Meta"] [
          p [] [ text "The source code for this site is on "
               , a [ href "https://github.com/matyjas/matyjas.github.io" ] [ text "github" ]
               , text " under the "

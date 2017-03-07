@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+  font-family: Georgia, serif;
   font-size: 100%;
   background-color: #D4D4D4;
   color: #555;
@@ -16,21 +16,15 @@ h1 {
   font-size: 1.5em;
   text-align: center; }
 
-.nav {
-  font-family: Georgia, serif;
-  font-weight: 300; }
-
-.selected {
-  font-weight: 700;
-  letter-spacing: 0.1em; }
-
 a {
   color: #555;
-  text-decoration: none;
   border-bottom: 1px solid transparent; }
   a:hover {
     color: #555;
     border-bottom: 1px solid #D4D4D4; }
+
+article {
+  padding: 1em 0.5em 1em 0.5em; }
 
 
 

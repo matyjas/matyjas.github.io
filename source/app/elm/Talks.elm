@@ -1,6 +1,7 @@
 module Talks exposing (view)
 
 import Html exposing (..)
+import Html.Attributes exposing (id)
 
 -- MODEL
 
@@ -10,6 +11,9 @@ type alias Talk =
 
 all : List Talk
 all = [
+ {title = "Pillarisation: modular architecture using pillars at Hotels.com",
+  event = "SWMobile in Bristol"},
+     
  {title = "Chatbots - An Existential Crisis",
   event = "Mobile Shopping 2017"},
      
@@ -52,11 +56,11 @@ all = [
 
 view : Html msg
 view =
-    div [] ( List.map renderTalk all )
+    article [id "Talks"] ( List.map renderTalk all )
 
 renderTalk : Talk -> Html msg
 renderTalk talk =
-    article [] [
-         h3 [] [text talk.title ],
+    section [] [
+         h4 [] [text talk.title ],
              text "@", text talk.event
         ]

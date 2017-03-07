@@ -3168,79 +3168,6 @@ var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
 
-var _ccapndave$elm_update_extra$Update_Extra$identity = function (model) {
-	return A2(
-		_elm_lang$core$Platform_Cmd_ops['!'],
-		model,
-		{ctor: '[]'});
-};
-var _ccapndave$elm_update_extra$Update_Extra$mapCmd = F2(
-	function (tagger, _p0) {
-		var _p1 = _p0;
-		return {
-			ctor: '_Tuple2',
-			_0: _p1._0,
-			_1: A2(_elm_lang$core$Platform_Cmd$map, tagger, _p1._1)
-		};
-	});
-var _ccapndave$elm_update_extra$Update_Extra$addCmd = F2(
-	function (cmd_, _p2) {
-		var _p3 = _p2;
-		return {
-			ctor: '_Tuple2',
-			_0: _p3._0,
-			_1: _elm_lang$core$Platform_Cmd$batch(
-				{
-					ctor: '::',
-					_0: _p3._1,
-					_1: {
-						ctor: '::',
-						_0: cmd_,
-						_1: {ctor: '[]'}
-					}
-				})
-		};
-	});
-var _ccapndave$elm_update_extra$Update_Extra$updateModel = F2(
-	function (f, _p4) {
-		var _p5 = _p4;
-		return {
-			ctor: '_Tuple2',
-			_0: f(_p5._0),
-			_1: _p5._1
-		};
-	});
-var _ccapndave$elm_update_extra$Update_Extra$filter = F2(
-	function (pred, f) {
-		return pred ? f : _elm_lang$core$Basics$identity;
-	});
-var _ccapndave$elm_update_extra$Update_Extra$andThen = F3(
-	function (update, msg, _p6) {
-		var _p7 = _p6;
-		var _p8 = A2(update, msg, _p7._0);
-		var model_ = _p8._0;
-		var cmd_ = _p8._1;
-		return {
-			ctor: '_Tuple2',
-			_0: model_,
-			_1: _elm_lang$core$Platform_Cmd$batch(
-				{
-					ctor: '::',
-					_0: _p7._1,
-					_1: {
-						ctor: '::',
-						_0: cmd_,
-						_1: {ctor: '[]'}
-					}
-				})
-		};
-	});
-var _ccapndave$elm_update_extra$Update_Extra$sequence = F3(
-	function (update, msgs, init) {
-		var foldUpdate = _ccapndave$elm_update_extra$Update_Extra$andThen(update);
-		return A3(_elm_lang$core$List$foldl, foldUpdate, init, msgs);
-	});
-
 //import Native.List //
 
 var _elm_lang$core$Native_Array = function() {
@@ -4263,203 +4190,6 @@ var _elm_lang$core$Array$repeat = F2(
 	});
 var _elm_lang$core$Array$Array = {ctor: 'Array'};
 
-var _elm_lang$core$Task$onError = _elm_lang$core$Native_Scheduler.onError;
-var _elm_lang$core$Task$andThen = _elm_lang$core$Native_Scheduler.andThen;
-var _elm_lang$core$Task$spawnCmd = F2(
-	function (router, _p0) {
-		var _p1 = _p0;
-		return _elm_lang$core$Native_Scheduler.spawn(
-			A2(
-				_elm_lang$core$Task$andThen,
-				_elm_lang$core$Platform$sendToApp(router),
-				_p1._0));
-	});
-var _elm_lang$core$Task$fail = _elm_lang$core$Native_Scheduler.fail;
-var _elm_lang$core$Task$mapError = F2(
-	function (convert, task) {
-		return A2(
-			_elm_lang$core$Task$onError,
-			function (_p2) {
-				return _elm_lang$core$Task$fail(
-					convert(_p2));
-			},
-			task);
-	});
-var _elm_lang$core$Task$succeed = _elm_lang$core$Native_Scheduler.succeed;
-var _elm_lang$core$Task$map = F2(
-	function (func, taskA) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (a) {
-				return _elm_lang$core$Task$succeed(
-					func(a));
-			},
-			taskA);
-	});
-var _elm_lang$core$Task$map2 = F3(
-	function (func, taskA, taskB) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					function (b) {
-						return _elm_lang$core$Task$succeed(
-							A2(func, a, b));
-					},
-					taskB);
-			},
-			taskA);
-	});
-var _elm_lang$core$Task$map3 = F4(
-	function (func, taskA, taskB, taskC) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							function (c) {
-								return _elm_lang$core$Task$succeed(
-									A3(func, a, b, c));
-							},
-							taskC);
-					},
-					taskB);
-			},
-			taskA);
-	});
-var _elm_lang$core$Task$map4 = F5(
-	function (func, taskA, taskB, taskC, taskD) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							function (c) {
-								return A2(
-									_elm_lang$core$Task$andThen,
-									function (d) {
-										return _elm_lang$core$Task$succeed(
-											A4(func, a, b, c, d));
-									},
-									taskD);
-							},
-							taskC);
-					},
-					taskB);
-			},
-			taskA);
-	});
-var _elm_lang$core$Task$map5 = F6(
-	function (func, taskA, taskB, taskC, taskD, taskE) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (a) {
-				return A2(
-					_elm_lang$core$Task$andThen,
-					function (b) {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							function (c) {
-								return A2(
-									_elm_lang$core$Task$andThen,
-									function (d) {
-										return A2(
-											_elm_lang$core$Task$andThen,
-											function (e) {
-												return _elm_lang$core$Task$succeed(
-													A5(func, a, b, c, d, e));
-											},
-											taskE);
-									},
-									taskD);
-							},
-							taskC);
-					},
-					taskB);
-			},
-			taskA);
-	});
-var _elm_lang$core$Task$sequence = function (tasks) {
-	var _p3 = tasks;
-	if (_p3.ctor === '[]') {
-		return _elm_lang$core$Task$succeed(
-			{ctor: '[]'});
-	} else {
-		return A3(
-			_elm_lang$core$Task$map2,
-			F2(
-				function (x, y) {
-					return {ctor: '::', _0: x, _1: y};
-				}),
-			_p3._0,
-			_elm_lang$core$Task$sequence(_p3._1));
-	}
-};
-var _elm_lang$core$Task$onEffects = F3(
-	function (router, commands, state) {
-		return A2(
-			_elm_lang$core$Task$map,
-			function (_p4) {
-				return {ctor: '_Tuple0'};
-			},
-			_elm_lang$core$Task$sequence(
-				A2(
-					_elm_lang$core$List$map,
-					_elm_lang$core$Task$spawnCmd(router),
-					commands)));
-	});
-var _elm_lang$core$Task$init = _elm_lang$core$Task$succeed(
-	{ctor: '_Tuple0'});
-var _elm_lang$core$Task$onSelfMsg = F3(
-	function (_p7, _p6, _p5) {
-		return _elm_lang$core$Task$succeed(
-			{ctor: '_Tuple0'});
-	});
-var _elm_lang$core$Task$command = _elm_lang$core$Native_Platform.leaf('Task');
-var _elm_lang$core$Task$Perform = function (a) {
-	return {ctor: 'Perform', _0: a};
-};
-var _elm_lang$core$Task$perform = F2(
-	function (toMessage, task) {
-		return _elm_lang$core$Task$command(
-			_elm_lang$core$Task$Perform(
-				A2(_elm_lang$core$Task$map, toMessage, task)));
-	});
-var _elm_lang$core$Task$attempt = F2(
-	function (resultToMessage, task) {
-		return _elm_lang$core$Task$command(
-			_elm_lang$core$Task$Perform(
-				A2(
-					_elm_lang$core$Task$onError,
-					function (_p8) {
-						return _elm_lang$core$Task$succeed(
-							resultToMessage(
-								_elm_lang$core$Result$Err(_p8)));
-					},
-					A2(
-						_elm_lang$core$Task$andThen,
-						function (_p9) {
-							return _elm_lang$core$Task$succeed(
-								resultToMessage(
-									_elm_lang$core$Result$Ok(_p9)));
-						},
-						task))));
-	});
-var _elm_lang$core$Task$cmdMap = F2(
-	function (tagger, _p10) {
-		var _p11 = _p10;
-		return _elm_lang$core$Task$Perform(
-			A2(_elm_lang$core$Task$map, tagger, _p11._0));
-	});
-_elm_lang$core$Native_Platform.effectManagers['Task'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Task$init, onEffects: _elm_lang$core$Task$onEffects, onSelfMsg: _elm_lang$core$Task$onSelfMsg, tag: 'cmd', cmdMap: _elm_lang$core$Task$cmdMap};
-
 var _elm_lang$core$Dict$foldr = F3(
 	function (f, acc, t) {
 		foldr:
@@ -5377,221 +5107,6 @@ var _elm_lang$core$Dict$diff = F2(
 			t2);
 	});
 
-//import Native.Scheduler //
-
-var _elm_lang$core$Native_Time = function() {
-
-var now = _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-{
-	callback(_elm_lang$core$Native_Scheduler.succeed(Date.now()));
-});
-
-function setInterval_(interval, task)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		var id = setInterval(function() {
-			_elm_lang$core$Native_Scheduler.rawSpawn(task);
-		}, interval);
-
-		return function() { clearInterval(id); };
-	});
-}
-
-return {
-	now: now,
-	setInterval_: F2(setInterval_)
-};
-
-}();
-var _elm_lang$core$Time$setInterval = _elm_lang$core$Native_Time.setInterval_;
-var _elm_lang$core$Time$spawnHelp = F3(
-	function (router, intervals, processes) {
-		var _p0 = intervals;
-		if (_p0.ctor === '[]') {
-			return _elm_lang$core$Task$succeed(processes);
-		} else {
-			var _p1 = _p0._0;
-			var spawnRest = function (id) {
-				return A3(
-					_elm_lang$core$Time$spawnHelp,
-					router,
-					_p0._1,
-					A3(_elm_lang$core$Dict$insert, _p1, id, processes));
-			};
-			var spawnTimer = _elm_lang$core$Native_Scheduler.spawn(
-				A2(
-					_elm_lang$core$Time$setInterval,
-					_p1,
-					A2(_elm_lang$core$Platform$sendToSelf, router, _p1)));
-			return A2(_elm_lang$core$Task$andThen, spawnRest, spawnTimer);
-		}
-	});
-var _elm_lang$core$Time$addMySub = F2(
-	function (_p2, state) {
-		var _p3 = _p2;
-		var _p6 = _p3._1;
-		var _p5 = _p3._0;
-		var _p4 = A2(_elm_lang$core$Dict$get, _p5, state);
-		if (_p4.ctor === 'Nothing') {
-			return A3(
-				_elm_lang$core$Dict$insert,
-				_p5,
-				{
-					ctor: '::',
-					_0: _p6,
-					_1: {ctor: '[]'}
-				},
-				state);
-		} else {
-			return A3(
-				_elm_lang$core$Dict$insert,
-				_p5,
-				{ctor: '::', _0: _p6, _1: _p4._0},
-				state);
-		}
-	});
-var _elm_lang$core$Time$inMilliseconds = function (t) {
-	return t;
-};
-var _elm_lang$core$Time$millisecond = 1;
-var _elm_lang$core$Time$second = 1000 * _elm_lang$core$Time$millisecond;
-var _elm_lang$core$Time$minute = 60 * _elm_lang$core$Time$second;
-var _elm_lang$core$Time$hour = 60 * _elm_lang$core$Time$minute;
-var _elm_lang$core$Time$inHours = function (t) {
-	return t / _elm_lang$core$Time$hour;
-};
-var _elm_lang$core$Time$inMinutes = function (t) {
-	return t / _elm_lang$core$Time$minute;
-};
-var _elm_lang$core$Time$inSeconds = function (t) {
-	return t / _elm_lang$core$Time$second;
-};
-var _elm_lang$core$Time$now = _elm_lang$core$Native_Time.now;
-var _elm_lang$core$Time$onSelfMsg = F3(
-	function (router, interval, state) {
-		var _p7 = A2(_elm_lang$core$Dict$get, interval, state.taggers);
-		if (_p7.ctor === 'Nothing') {
-			return _elm_lang$core$Task$succeed(state);
-		} else {
-			var tellTaggers = function (time) {
-				return _elm_lang$core$Task$sequence(
-					A2(
-						_elm_lang$core$List$map,
-						function (tagger) {
-							return A2(
-								_elm_lang$core$Platform$sendToApp,
-								router,
-								tagger(time));
-						},
-						_p7._0));
-			};
-			return A2(
-				_elm_lang$core$Task$andThen,
-				function (_p8) {
-					return _elm_lang$core$Task$succeed(state);
-				},
-				A2(_elm_lang$core$Task$andThen, tellTaggers, _elm_lang$core$Time$now));
-		}
-	});
-var _elm_lang$core$Time$subscription = _elm_lang$core$Native_Platform.leaf('Time');
-var _elm_lang$core$Time$State = F2(
-	function (a, b) {
-		return {taggers: a, processes: b};
-	});
-var _elm_lang$core$Time$init = _elm_lang$core$Task$succeed(
-	A2(_elm_lang$core$Time$State, _elm_lang$core$Dict$empty, _elm_lang$core$Dict$empty));
-var _elm_lang$core$Time$onEffects = F3(
-	function (router, subs, _p9) {
-		var _p10 = _p9;
-		var rightStep = F3(
-			function (_p12, id, _p11) {
-				var _p13 = _p11;
-				return {
-					ctor: '_Tuple3',
-					_0: _p13._0,
-					_1: _p13._1,
-					_2: A2(
-						_elm_lang$core$Task$andThen,
-						function (_p14) {
-							return _p13._2;
-						},
-						_elm_lang$core$Native_Scheduler.kill(id))
-				};
-			});
-		var bothStep = F4(
-			function (interval, taggers, id, _p15) {
-				var _p16 = _p15;
-				return {
-					ctor: '_Tuple3',
-					_0: _p16._0,
-					_1: A3(_elm_lang$core$Dict$insert, interval, id, _p16._1),
-					_2: _p16._2
-				};
-			});
-		var leftStep = F3(
-			function (interval, taggers, _p17) {
-				var _p18 = _p17;
-				return {
-					ctor: '_Tuple3',
-					_0: {ctor: '::', _0: interval, _1: _p18._0},
-					_1: _p18._1,
-					_2: _p18._2
-				};
-			});
-		var newTaggers = A3(_elm_lang$core$List$foldl, _elm_lang$core$Time$addMySub, _elm_lang$core$Dict$empty, subs);
-		var _p19 = A6(
-			_elm_lang$core$Dict$merge,
-			leftStep,
-			bothStep,
-			rightStep,
-			newTaggers,
-			_p10.processes,
-			{
-				ctor: '_Tuple3',
-				_0: {ctor: '[]'},
-				_1: _elm_lang$core$Dict$empty,
-				_2: _elm_lang$core$Task$succeed(
-					{ctor: '_Tuple0'})
-			});
-		var spawnList = _p19._0;
-		var existingDict = _p19._1;
-		var killTask = _p19._2;
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (newProcesses) {
-				return _elm_lang$core$Task$succeed(
-					A2(_elm_lang$core$Time$State, newTaggers, newProcesses));
-			},
-			A2(
-				_elm_lang$core$Task$andThen,
-				function (_p20) {
-					return A3(_elm_lang$core$Time$spawnHelp, router, spawnList, existingDict);
-				},
-				killTask));
-	});
-var _elm_lang$core$Time$Every = F2(
-	function (a, b) {
-		return {ctor: 'Every', _0: a, _1: b};
-	});
-var _elm_lang$core$Time$every = F2(
-	function (interval, tagger) {
-		return _elm_lang$core$Time$subscription(
-			A2(_elm_lang$core$Time$Every, interval, tagger));
-	});
-var _elm_lang$core$Time$subMap = F2(
-	function (f, _p21) {
-		var _p22 = _p21;
-		return A2(
-			_elm_lang$core$Time$Every,
-			_p22._0,
-			function (_p23) {
-				return f(
-					_p22._1(_p23));
-			});
-	});
-_elm_lang$core$Native_Platform.effectManagers['Time'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Time$init, onEffects: _elm_lang$core$Time$onEffects, onSelfMsg: _elm_lang$core$Time$onSelfMsg, tag: 'sub', subMap: _elm_lang$core$Time$subMap};
-
 //import Maybe, Native.Array, Native.List, Native.Utils, Result //
 
 var _elm_lang$core$Native_Json = function() {
@@ -6241,333 +5756,6 @@ var _elm_lang$core$Json_Decode$int = _elm_lang$core$Native_Json.decodePrimitive(
 var _elm_lang$core$Json_Decode$bool = _elm_lang$core$Native_Json.decodePrimitive('bool');
 var _elm_lang$core$Json_Decode$string = _elm_lang$core$Native_Json.decodePrimitive('string');
 var _elm_lang$core$Json_Decode$Decoder = {ctor: 'Decoder'};
-
-//import Maybe, Native.List //
-
-var _elm_lang$core$Native_Regex = function() {
-
-function escape(str)
-{
-	return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-}
-function caseInsensitive(re)
-{
-	return new RegExp(re.source, 'gi');
-}
-function regex(raw)
-{
-	return new RegExp(raw, 'g');
-}
-
-function contains(re, string)
-{
-	return string.match(re) !== null;
-}
-
-function find(n, re, str)
-{
-	n = n.ctor === 'All' ? Infinity : n._0;
-	var out = [];
-	var number = 0;
-	var string = str;
-	var lastIndex = re.lastIndex;
-	var prevLastIndex = -1;
-	var result;
-	while (number++ < n && (result = re.exec(string)))
-	{
-		if (prevLastIndex === re.lastIndex) break;
-		var i = result.length - 1;
-		var subs = new Array(i);
-		while (i > 0)
-		{
-			var submatch = result[i];
-			subs[--i] = submatch === undefined
-				? _elm_lang$core$Maybe$Nothing
-				: _elm_lang$core$Maybe$Just(submatch);
-		}
-		out.push({
-			match: result[0],
-			submatches: _elm_lang$core$Native_List.fromArray(subs),
-			index: result.index,
-			number: number
-		});
-		prevLastIndex = re.lastIndex;
-	}
-	re.lastIndex = lastIndex;
-	return _elm_lang$core$Native_List.fromArray(out);
-}
-
-function replace(n, re, replacer, string)
-{
-	n = n.ctor === 'All' ? Infinity : n._0;
-	var count = 0;
-	function jsReplacer(match)
-	{
-		if (count++ >= n)
-		{
-			return match;
-		}
-		var i = arguments.length - 3;
-		var submatches = new Array(i);
-		while (i > 0)
-		{
-			var submatch = arguments[i];
-			submatches[--i] = submatch === undefined
-				? _elm_lang$core$Maybe$Nothing
-				: _elm_lang$core$Maybe$Just(submatch);
-		}
-		return replacer({
-			match: match,
-			submatches: _elm_lang$core$Native_List.fromArray(submatches),
-			index: arguments[arguments.length - 2],
-			number: count
-		});
-	}
-	return string.replace(re, jsReplacer);
-}
-
-function split(n, re, str)
-{
-	n = n.ctor === 'All' ? Infinity : n._0;
-	if (n === Infinity)
-	{
-		return _elm_lang$core$Native_List.fromArray(str.split(re));
-	}
-	var string = str;
-	var result;
-	var out = [];
-	var start = re.lastIndex;
-	var restoreLastIndex = re.lastIndex;
-	while (n--)
-	{
-		if (!(result = re.exec(string))) break;
-		out.push(string.slice(start, result.index));
-		start = re.lastIndex;
-	}
-	out.push(string.slice(start));
-	re.lastIndex = restoreLastIndex;
-	return _elm_lang$core$Native_List.fromArray(out);
-}
-
-return {
-	regex: regex,
-	caseInsensitive: caseInsensitive,
-	escape: escape,
-
-	contains: F2(contains),
-	find: F3(find),
-	replace: F4(replace),
-	split: F3(split)
-};
-
-}();
-
-var _elm_lang$core$Process$kill = _elm_lang$core$Native_Scheduler.kill;
-var _elm_lang$core$Process$sleep = _elm_lang$core$Native_Scheduler.sleep;
-var _elm_lang$core$Process$spawn = _elm_lang$core$Native_Scheduler.spawn;
-
-var _elm_lang$core$Regex$split = _elm_lang$core$Native_Regex.split;
-var _elm_lang$core$Regex$replace = _elm_lang$core$Native_Regex.replace;
-var _elm_lang$core$Regex$find = _elm_lang$core$Native_Regex.find;
-var _elm_lang$core$Regex$contains = _elm_lang$core$Native_Regex.contains;
-var _elm_lang$core$Regex$caseInsensitive = _elm_lang$core$Native_Regex.caseInsensitive;
-var _elm_lang$core$Regex$regex = _elm_lang$core$Native_Regex.regex;
-var _elm_lang$core$Regex$escape = _elm_lang$core$Native_Regex.escape;
-var _elm_lang$core$Regex$Match = F4(
-	function (a, b, c, d) {
-		return {match: a, submatches: b, index: c, number: d};
-	});
-var _elm_lang$core$Regex$Regex = {ctor: 'Regex'};
-var _elm_lang$core$Regex$AtMost = function (a) {
-	return {ctor: 'AtMost', _0: a};
-};
-var _elm_lang$core$Regex$All = {ctor: 'All'};
-
-var _elm_lang$dom$Native_Dom = function() {
-
-var fakeNode = {
-	addEventListener: function() {},
-	removeEventListener: function() {}
-};
-
-var onDocument = on(typeof document !== 'undefined' ? document : fakeNode);
-var onWindow = on(typeof window !== 'undefined' ? window : fakeNode);
-
-function on(node)
-{
-	return function(eventName, decoder, toTask)
-	{
-		return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback) {
-
-			function performTask(event)
-			{
-				var result = A2(_elm_lang$core$Json_Decode$decodeValue, decoder, event);
-				if (result.ctor === 'Ok')
-				{
-					_elm_lang$core$Native_Scheduler.rawSpawn(toTask(result._0));
-				}
-			}
-
-			node.addEventListener(eventName, performTask);
-
-			return function()
-			{
-				node.removeEventListener(eventName, performTask);
-			};
-		});
-	};
-}
-
-var rAF = typeof requestAnimationFrame !== 'undefined'
-	? requestAnimationFrame
-	: function(callback) { callback(); };
-
-function withNode(id, doStuff)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		rAF(function()
-		{
-			var node = document.getElementById(id);
-			if (node === null)
-			{
-				callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'NotFound', _0: id }));
-				return;
-			}
-			callback(_elm_lang$core$Native_Scheduler.succeed(doStuff(node)));
-		});
-	});
-}
-
-
-// FOCUS
-
-function focus(id)
-{
-	return withNode(id, function(node) {
-		node.focus();
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-function blur(id)
-{
-	return withNode(id, function(node) {
-		node.blur();
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-
-// SCROLLING
-
-function getScrollTop(id)
-{
-	return withNode(id, function(node) {
-		return node.scrollTop;
-	});
-}
-
-function setScrollTop(id, desiredScrollTop)
-{
-	return withNode(id, function(node) {
-		node.scrollTop = desiredScrollTop;
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-function toBottom(id)
-{
-	return withNode(id, function(node) {
-		node.scrollTop = node.scrollHeight;
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-function getScrollLeft(id)
-{
-	return withNode(id, function(node) {
-		return node.scrollLeft;
-	});
-}
-
-function setScrollLeft(id, desiredScrollLeft)
-{
-	return withNode(id, function(node) {
-		node.scrollLeft = desiredScrollLeft;
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-function toRight(id)
-{
-	return withNode(id, function(node) {
-		node.scrollLeft = node.scrollWidth;
-		return _elm_lang$core$Native_Utils.Tuple0;
-	});
-}
-
-
-// SIZE
-
-function width(options, id)
-{
-	return withNode(id, function(node) {
-		switch (options.ctor)
-		{
-			case 'Content':
-				return node.scrollWidth;
-			case 'VisibleContent':
-				return node.clientWidth;
-			case 'VisibleContentWithBorders':
-				return node.offsetWidth;
-			case 'VisibleContentWithBordersAndMargins':
-				var rect = node.getBoundingClientRect();
-				return rect.right - rect.left;
-		}
-	});
-}
-
-function height(options, id)
-{
-	return withNode(id, function(node) {
-		switch (options.ctor)
-		{
-			case 'Content':
-				return node.scrollHeight;
-			case 'VisibleContent':
-				return node.clientHeight;
-			case 'VisibleContentWithBorders':
-				return node.offsetHeight;
-			case 'VisibleContentWithBordersAndMargins':
-				var rect = node.getBoundingClientRect();
-				return rect.bottom - rect.top;
-		}
-	});
-}
-
-return {
-	onDocument: F3(onDocument),
-	onWindow: F3(onWindow),
-
-	focus: focus,
-	blur: blur,
-
-	getScrollTop: getScrollTop,
-	setScrollTop: F2(setScrollTop),
-	getScrollLeft: getScrollLeft,
-	setScrollLeft: F2(setScrollLeft),
-	toBottom: toBottom,
-	toRight: toRight,
-
-	height: F2(height),
-	width: F2(width)
-};
-
-}();
-
-var _elm_lang$dom$Dom_LowLevel$onWindow = _elm_lang$dom$Native_Dom.onWindow;
-var _elm_lang$dom$Dom_LowLevel$onDocument = _elm_lang$dom$Native_Dom.onDocument;
 
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrap;
 var _elm_lang$virtual_dom$VirtualDom_Debug$wrapWithFlags;
@@ -8957,1646 +8145,23 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
-var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode$field, 'keyCode', _elm_lang$core$Json_Decode$int);
-var _elm_lang$html$Html_Events$targetChecked = A2(
-	_elm_lang$core$Json_Decode$at,
-	{
-		ctor: '::',
-		_0: 'target',
-		_1: {
-			ctor: '::',
-			_0: 'checked',
-			_1: {ctor: '[]'}
-		}
-	},
-	_elm_lang$core$Json_Decode$bool);
-var _elm_lang$html$Html_Events$targetValue = A2(
-	_elm_lang$core$Json_Decode$at,
-	{
-		ctor: '::',
-		_0: 'target',
-		_1: {
-			ctor: '::',
-			_0: 'value',
-			_1: {ctor: '[]'}
-		}
-	},
-	_elm_lang$core$Json_Decode$string);
-var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
-var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
-var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
-var _elm_lang$html$Html_Events$onFocus = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'focus',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onBlur = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'blur',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
-	_elm_lang$html$Html_Events$defaultOptions,
-	{preventDefault: true});
-var _elm_lang$html$Html_Events$onSubmit = function (msg) {
-	return A3(
-		_elm_lang$html$Html_Events$onWithOptions,
-		'submit',
-		_elm_lang$html$Html_Events$onSubmitOptions,
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onCheck = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'change',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
-};
-var _elm_lang$html$Html_Events$onInput = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'input',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
-};
-var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseout',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseover',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseleave',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseenter',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseup',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mousedown',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'dblclick',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'click',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$Options = F2(
-	function (a, b) {
-		return {stopPropagation: a, preventDefault: b};
-	});
-
-var _elm_lang$http$Native_Http = function() {
-
-
-// ENCODING AND DECODING
-
-function encodeUri(string)
-{
-	return encodeURIComponent(string);
-}
-
-function decodeUri(string)
-{
-	try
-	{
-		return _elm_lang$core$Maybe$Just(decodeURIComponent(string));
-	}
-	catch(e)
-	{
-		return _elm_lang$core$Maybe$Nothing;
-	}
-}
-
-
-// SEND REQUEST
-
-function toTask(request, maybeProgress)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		var xhr = new XMLHttpRequest();
-
-		configureProgress(xhr, maybeProgress);
-
-		xhr.addEventListener('error', function() {
-			callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'NetworkError' }));
-		});
-		xhr.addEventListener('timeout', function() {
-			callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'Timeout' }));
-		});
-		xhr.addEventListener('load', function() {
-			callback(handleResponse(xhr, request.expect.responseToResult));
-		});
-
-		try
-		{
-			xhr.open(request.method, request.url, true);
-		}
-		catch (e)
-		{
-			return callback(_elm_lang$core$Native_Scheduler.fail({ ctor: 'BadUrl', _0: request.url }));
-		}
-
-		configureRequest(xhr, request);
-		send(xhr, request.body);
-
-		return function() { xhr.abort(); };
-	});
-}
-
-function configureProgress(xhr, maybeProgress)
-{
-	if (maybeProgress.ctor === 'Nothing')
-	{
-		return;
-	}
-
-	xhr.addEventListener('progress', function(event) {
-		if (!event.lengthComputable)
-		{
-			return;
-		}
-		_elm_lang$core$Native_Scheduler.rawSpawn(maybeProgress._0({
-			bytes: event.loaded,
-			bytesExpected: event.total
-		}));
-	});
-}
-
-function configureRequest(xhr, request)
-{
-	function setHeader(pair)
-	{
-		xhr.setRequestHeader(pair._0, pair._1);
-	}
-
-	A2(_elm_lang$core$List$map, setHeader, request.headers);
-	xhr.responseType = request.expect.responseType;
-	xhr.withCredentials = request.withCredentials;
-
-	if (request.timeout.ctor === 'Just')
-	{
-		xhr.timeout = request.timeout._0;
-	}
-}
-
-function send(xhr, body)
-{
-	switch (body.ctor)
-	{
-		case 'EmptyBody':
-			xhr.send();
-			return;
-
-		case 'StringBody':
-			xhr.setRequestHeader('Content-Type', body._0);
-			xhr.send(body._1);
-			return;
-
-		case 'FormDataBody':
-			xhr.send(body._0);
-			return;
-	}
-}
-
-
-// RESPONSES
-
-function handleResponse(xhr, responseToResult)
-{
-	var response = toResponse(xhr);
-
-	if (xhr.status < 200 || 300 <= xhr.status)
-	{
-		response.body = xhr.responseText;
-		return _elm_lang$core$Native_Scheduler.fail({
-			ctor: 'BadStatus',
-			_0: response
-		});
-	}
-
-	var result = responseToResult(response);
-
-	if (result.ctor === 'Ok')
-	{
-		return _elm_lang$core$Native_Scheduler.succeed(result._0);
-	}
-	else
-	{
-		response.body = xhr.responseText;
-		return _elm_lang$core$Native_Scheduler.fail({
-			ctor: 'BadPayload',
-			_0: result._0,
-			_1: response
-		});
-	}
-}
-
-function toResponse(xhr)
-{
-	return {
-		status: { code: xhr.status, message: xhr.statusText },
-		headers: parseHeaders(xhr.getAllResponseHeaders()),
-		url: xhr.responseURL,
-		body: xhr.response
-	};
-}
-
-function parseHeaders(rawHeaders)
-{
-	var headers = _elm_lang$core$Dict$empty;
-
-	if (!rawHeaders)
-	{
-		return headers;
-	}
-
-	var headerPairs = rawHeaders.split('\u000d\u000a');
-	for (var i = headerPairs.length; i--; )
-	{
-		var headerPair = headerPairs[i];
-		var index = headerPair.indexOf('\u003a\u0020');
-		if (index > 0)
-		{
-			var key = headerPair.substring(0, index);
-			var value = headerPair.substring(index + 2);
-
-			headers = A3(_elm_lang$core$Dict$update, key, function(oldValue) {
-				if (oldValue.ctor === 'Just')
-				{
-					return _elm_lang$core$Maybe$Just(value + ', ' + oldValue._0);
-				}
-				return _elm_lang$core$Maybe$Just(value);
-			}, headers);
-		}
-	}
-
-	return headers;
-}
-
-
-// EXPECTORS
-
-function expectStringResponse(responseToResult)
-{
-	return {
-		responseType: 'text',
-		responseToResult: responseToResult
-	};
-}
-
-function mapExpect(func, expect)
-{
-	return {
-		responseType: expect.responseType,
-		responseToResult: function(response) {
-			var convertedResponse = expect.responseToResult(response);
-			return A2(_elm_lang$core$Result$map, func, convertedResponse);
-		}
-	};
-}
-
-
-// BODY
-
-function multipart(parts)
-{
-	var formData = new FormData();
-
-	while (parts.ctor !== '[]')
-	{
-		var part = parts._0;
-		formData.append(part._0, part._1);
-		parts = parts._1;
-	}
-
-	return { ctor: 'FormDataBody', _0: formData };
-}
-
-return {
-	toTask: F2(toTask),
-	expectStringResponse: expectStringResponse,
-	mapExpect: F2(mapExpect),
-	multipart: multipart,
-	encodeUri: encodeUri,
-	decodeUri: decodeUri
-};
-
-}();
-
-var _elm_lang$http$Http_Internal$map = F2(
-	function (func, request) {
-		return _elm_lang$core$Native_Utils.update(
-			request,
-			{
-				expect: A2(_elm_lang$http$Native_Http.mapExpect, func, request.expect)
-			});
-	});
-var _elm_lang$http$Http_Internal$RawRequest = F7(
-	function (a, b, c, d, e, f, g) {
-		return {method: a, headers: b, url: c, body: d, expect: e, timeout: f, withCredentials: g};
-	});
-var _elm_lang$http$Http_Internal$Request = function (a) {
-	return {ctor: 'Request', _0: a};
-};
-var _elm_lang$http$Http_Internal$Expect = {ctor: 'Expect'};
-var _elm_lang$http$Http_Internal$FormDataBody = {ctor: 'FormDataBody'};
-var _elm_lang$http$Http_Internal$StringBody = F2(
-	function (a, b) {
-		return {ctor: 'StringBody', _0: a, _1: b};
-	});
-var _elm_lang$http$Http_Internal$EmptyBody = {ctor: 'EmptyBody'};
-var _elm_lang$http$Http_Internal$Header = F2(
-	function (a, b) {
-		return {ctor: 'Header', _0: a, _1: b};
-	});
-
-var _elm_lang$http$Http$decodeUri = _elm_lang$http$Native_Http.decodeUri;
-var _elm_lang$http$Http$encodeUri = _elm_lang$http$Native_Http.encodeUri;
-var _elm_lang$http$Http$expectStringResponse = _elm_lang$http$Native_Http.expectStringResponse;
-var _elm_lang$http$Http$expectJson = function (decoder) {
-	return _elm_lang$http$Http$expectStringResponse(
-		function (response) {
-			return A2(_elm_lang$core$Json_Decode$decodeString, decoder, response.body);
-		});
-};
-var _elm_lang$http$Http$expectString = _elm_lang$http$Http$expectStringResponse(
-	function (response) {
-		return _elm_lang$core$Result$Ok(response.body);
-	});
-var _elm_lang$http$Http$multipartBody = _elm_lang$http$Native_Http.multipart;
-var _elm_lang$http$Http$stringBody = _elm_lang$http$Http_Internal$StringBody;
-var _elm_lang$http$Http$jsonBody = function (value) {
-	return A2(
-		_elm_lang$http$Http_Internal$StringBody,
-		'application/json',
-		A2(_elm_lang$core$Json_Encode$encode, 0, value));
-};
-var _elm_lang$http$Http$emptyBody = _elm_lang$http$Http_Internal$EmptyBody;
-var _elm_lang$http$Http$header = _elm_lang$http$Http_Internal$Header;
-var _elm_lang$http$Http$request = _elm_lang$http$Http_Internal$Request;
-var _elm_lang$http$Http$post = F3(
-	function (url, body, decoder) {
-		return _elm_lang$http$Http$request(
-			{
-				method: 'POST',
-				headers: {ctor: '[]'},
-				url: url,
-				body: body,
-				expect: _elm_lang$http$Http$expectJson(decoder),
-				timeout: _elm_lang$core$Maybe$Nothing,
-				withCredentials: false
-			});
-	});
-var _elm_lang$http$Http$get = F2(
-	function (url, decoder) {
-		return _elm_lang$http$Http$request(
-			{
-				method: 'GET',
-				headers: {ctor: '[]'},
-				url: url,
-				body: _elm_lang$http$Http$emptyBody,
-				expect: _elm_lang$http$Http$expectJson(decoder),
-				timeout: _elm_lang$core$Maybe$Nothing,
-				withCredentials: false
-			});
-	});
-var _elm_lang$http$Http$getString = function (url) {
-	return _elm_lang$http$Http$request(
-		{
-			method: 'GET',
-			headers: {ctor: '[]'},
-			url: url,
-			body: _elm_lang$http$Http$emptyBody,
-			expect: _elm_lang$http$Http$expectString,
-			timeout: _elm_lang$core$Maybe$Nothing,
-			withCredentials: false
-		});
-};
-var _elm_lang$http$Http$toTask = function (_p0) {
-	var _p1 = _p0;
-	return A2(_elm_lang$http$Native_Http.toTask, _p1._0, _elm_lang$core$Maybe$Nothing);
-};
-var _elm_lang$http$Http$send = F2(
-	function (resultToMessage, request) {
-		return A2(
-			_elm_lang$core$Task$attempt,
-			resultToMessage,
-			_elm_lang$http$Http$toTask(request));
-	});
-var _elm_lang$http$Http$Response = F4(
-	function (a, b, c, d) {
-		return {url: a, status: b, headers: c, body: d};
-	});
-var _elm_lang$http$Http$BadPayload = F2(
-	function (a, b) {
-		return {ctor: 'BadPayload', _0: a, _1: b};
-	});
-var _elm_lang$http$Http$BadStatus = function (a) {
-	return {ctor: 'BadStatus', _0: a};
-};
-var _elm_lang$http$Http$NetworkError = {ctor: 'NetworkError'};
-var _elm_lang$http$Http$Timeout = {ctor: 'Timeout'};
-var _elm_lang$http$Http$BadUrl = function (a) {
-	return {ctor: 'BadUrl', _0: a};
-};
-var _elm_lang$http$Http$StringPart = F2(
-	function (a, b) {
-		return {ctor: 'StringPart', _0: a, _1: b};
-	});
-var _elm_lang$http$Http$stringPart = _elm_lang$http$Http$StringPart;
-
-var _elm_lang$navigation$Native_Navigation = function() {
-
-
-// FAKE NAVIGATION
-
-function go(n)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		if (n !== 0)
-		{
-			history.go(n);
-		}
-		callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
-	});
-}
-
-function pushState(url)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		history.pushState({}, '', url);
-		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
-	});
-}
-
-function replaceState(url)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		history.replaceState({}, '', url);
-		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
-	});
-}
-
-
-// REAL NAVIGATION
-
-function reloadPage(skipCache)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		document.location.reload(skipCache);
-		callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
-	});
-}
-
-function setLocation(url)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		try
-		{
-			window.location = url;
-		}
-		catch(err)
-		{
-			// Only Firefox can throw a NS_ERROR_MALFORMED_URI exception here.
-			// Other browsers reload the page, so let's be consistent about that.
-			document.location.reload(false);
-		}
-		callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
-	});
-}
-
-
-// GET LOCATION
-
-function getLocation()
-{
-	var location = document.location;
-
-	return {
-		href: location.href,
-		host: location.host,
-		hostname: location.hostname,
-		protocol: location.protocol,
-		origin: location.origin,
-		port_: location.port,
-		pathname: location.pathname,
-		search: location.search,
-		hash: location.hash,
-		username: location.username,
-		password: location.password
-	};
-}
-
-
-// DETECT IE11 PROBLEMS
-
-function isInternetExplorer11()
-{
-	return window.navigator.userAgent.indexOf('Trident') !== -1;
-}
-
-
-return {
-	go: go,
-	setLocation: setLocation,
-	reloadPage: reloadPage,
-	pushState: pushState,
-	replaceState: replaceState,
-	getLocation: getLocation,
-	isInternetExplorer11: isInternetExplorer11
-};
-
-}();
-
-var _elm_lang$navigation$Navigation$replaceState = _elm_lang$navigation$Native_Navigation.replaceState;
-var _elm_lang$navigation$Navigation$pushState = _elm_lang$navigation$Native_Navigation.pushState;
-var _elm_lang$navigation$Navigation$go = _elm_lang$navigation$Native_Navigation.go;
-var _elm_lang$navigation$Navigation$reloadPage = _elm_lang$navigation$Native_Navigation.reloadPage;
-var _elm_lang$navigation$Navigation$setLocation = _elm_lang$navigation$Native_Navigation.setLocation;
-var _elm_lang$navigation$Navigation_ops = _elm_lang$navigation$Navigation_ops || {};
-_elm_lang$navigation$Navigation_ops['&>'] = F2(
-	function (task1, task2) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			function (_p0) {
-				return task2;
-			},
-			task1);
-	});
-var _elm_lang$navigation$Navigation$notify = F3(
-	function (router, subs, location) {
-		var send = function (_p1) {
-			var _p2 = _p1;
-			return A2(
-				_elm_lang$core$Platform$sendToApp,
-				router,
-				_p2._0(location));
-		};
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			_elm_lang$core$Task$sequence(
-				A2(_elm_lang$core$List$map, send, subs)),
-			_elm_lang$core$Task$succeed(
-				{ctor: '_Tuple0'}));
-	});
-var _elm_lang$navigation$Navigation$cmdHelp = F3(
-	function (router, subs, cmd) {
-		var _p3 = cmd;
-		switch (_p3.ctor) {
-			case 'Jump':
-				return _elm_lang$navigation$Navigation$go(_p3._0);
-			case 'New':
-				return A2(
-					_elm_lang$core$Task$andThen,
-					A2(_elm_lang$navigation$Navigation$notify, router, subs),
-					_elm_lang$navigation$Navigation$pushState(_p3._0));
-			case 'Modify':
-				return A2(
-					_elm_lang$core$Task$andThen,
-					A2(_elm_lang$navigation$Navigation$notify, router, subs),
-					_elm_lang$navigation$Navigation$replaceState(_p3._0));
-			case 'Visit':
-				return _elm_lang$navigation$Navigation$setLocation(_p3._0);
-			default:
-				return _elm_lang$navigation$Navigation$reloadPage(_p3._0);
-		}
-	});
-var _elm_lang$navigation$Navigation$killPopWatcher = function (popWatcher) {
-	var _p4 = popWatcher;
-	if (_p4.ctor === 'Normal') {
-		return _elm_lang$core$Process$kill(_p4._0);
-	} else {
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			_elm_lang$core$Process$kill(_p4._0),
-			_elm_lang$core$Process$kill(_p4._1));
-	}
-};
-var _elm_lang$navigation$Navigation$onSelfMsg = F3(
-	function (router, location, state) {
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			A3(_elm_lang$navigation$Navigation$notify, router, state.subs, location),
-			_elm_lang$core$Task$succeed(state));
-	});
-var _elm_lang$navigation$Navigation$subscription = _elm_lang$core$Native_Platform.leaf('Navigation');
-var _elm_lang$navigation$Navigation$command = _elm_lang$core$Native_Platform.leaf('Navigation');
-var _elm_lang$navigation$Navigation$Location = function (a) {
-	return function (b) {
-		return function (c) {
-			return function (d) {
-				return function (e) {
-					return function (f) {
-						return function (g) {
-							return function (h) {
-								return function (i) {
-									return function (j) {
-										return function (k) {
-											return {href: a, host: b, hostname: c, protocol: d, origin: e, port_: f, pathname: g, search: h, hash: i, username: j, password: k};
-										};
-									};
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
-};
-var _elm_lang$navigation$Navigation$State = F2(
-	function (a, b) {
-		return {subs: a, popWatcher: b};
-	});
-var _elm_lang$navigation$Navigation$init = _elm_lang$core$Task$succeed(
-	A2(
-		_elm_lang$navigation$Navigation$State,
-		{ctor: '[]'},
-		_elm_lang$core$Maybe$Nothing));
-var _elm_lang$navigation$Navigation$Reload = function (a) {
-	return {ctor: 'Reload', _0: a};
-};
-var _elm_lang$navigation$Navigation$reload = _elm_lang$navigation$Navigation$command(
-	_elm_lang$navigation$Navigation$Reload(false));
-var _elm_lang$navigation$Navigation$reloadAndSkipCache = _elm_lang$navigation$Navigation$command(
-	_elm_lang$navigation$Navigation$Reload(true));
-var _elm_lang$navigation$Navigation$Visit = function (a) {
-	return {ctor: 'Visit', _0: a};
-};
-var _elm_lang$navigation$Navigation$load = function (url) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Visit(url));
-};
-var _elm_lang$navigation$Navigation$Modify = function (a) {
-	return {ctor: 'Modify', _0: a};
-};
-var _elm_lang$navigation$Navigation$modifyUrl = function (url) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Modify(url));
-};
-var _elm_lang$navigation$Navigation$New = function (a) {
-	return {ctor: 'New', _0: a};
-};
-var _elm_lang$navigation$Navigation$newUrl = function (url) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$New(url));
-};
-var _elm_lang$navigation$Navigation$Jump = function (a) {
-	return {ctor: 'Jump', _0: a};
-};
-var _elm_lang$navigation$Navigation$back = function (n) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Jump(0 - n));
-};
-var _elm_lang$navigation$Navigation$forward = function (n) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Jump(n));
-};
-var _elm_lang$navigation$Navigation$cmdMap = F2(
-	function (_p5, myCmd) {
-		var _p6 = myCmd;
-		switch (_p6.ctor) {
-			case 'Jump':
-				return _elm_lang$navigation$Navigation$Jump(_p6._0);
-			case 'New':
-				return _elm_lang$navigation$Navigation$New(_p6._0);
-			case 'Modify':
-				return _elm_lang$navigation$Navigation$Modify(_p6._0);
-			case 'Visit':
-				return _elm_lang$navigation$Navigation$Visit(_p6._0);
-			default:
-				return _elm_lang$navigation$Navigation$Reload(_p6._0);
-		}
-	});
-var _elm_lang$navigation$Navigation$Monitor = function (a) {
-	return {ctor: 'Monitor', _0: a};
-};
-var _elm_lang$navigation$Navigation$program = F2(
-	function (locationToMessage, stuff) {
-		var init = stuff.init(
-			_elm_lang$navigation$Native_Navigation.getLocation(
-				{ctor: '_Tuple0'}));
-		var subs = function (model) {
-			return _elm_lang$core$Platform_Sub$batch(
-				{
-					ctor: '::',
-					_0: _elm_lang$navigation$Navigation$subscription(
-						_elm_lang$navigation$Navigation$Monitor(locationToMessage)),
-					_1: {
-						ctor: '::',
-						_0: stuff.subscriptions(model),
-						_1: {ctor: '[]'}
-					}
-				});
-		};
-		return _elm_lang$html$Html$program(
-			{init: init, view: stuff.view, update: stuff.update, subscriptions: subs});
-	});
-var _elm_lang$navigation$Navigation$programWithFlags = F2(
-	function (locationToMessage, stuff) {
-		var init = function (flags) {
-			return A2(
-				stuff.init,
-				flags,
-				_elm_lang$navigation$Native_Navigation.getLocation(
-					{ctor: '_Tuple0'}));
-		};
-		var subs = function (model) {
-			return _elm_lang$core$Platform_Sub$batch(
-				{
-					ctor: '::',
-					_0: _elm_lang$navigation$Navigation$subscription(
-						_elm_lang$navigation$Navigation$Monitor(locationToMessage)),
-					_1: {
-						ctor: '::',
-						_0: stuff.subscriptions(model),
-						_1: {ctor: '[]'}
-					}
-				});
-		};
-		return _elm_lang$html$Html$programWithFlags(
-			{init: init, view: stuff.view, update: stuff.update, subscriptions: subs});
-	});
-var _elm_lang$navigation$Navigation$subMap = F2(
-	function (func, _p7) {
-		var _p8 = _p7;
-		return _elm_lang$navigation$Navigation$Monitor(
-			function (_p9) {
-				return func(
-					_p8._0(_p9));
-			});
-	});
-var _elm_lang$navigation$Navigation$InternetExplorer = F2(
-	function (a, b) {
-		return {ctor: 'InternetExplorer', _0: a, _1: b};
-	});
-var _elm_lang$navigation$Navigation$Normal = function (a) {
-	return {ctor: 'Normal', _0: a};
-};
-var _elm_lang$navigation$Navigation$spawnPopWatcher = function (router) {
-	var reportLocation = function (_p10) {
-		return A2(
-			_elm_lang$core$Platform$sendToSelf,
-			router,
-			_elm_lang$navigation$Native_Navigation.getLocation(
-				{ctor: '_Tuple0'}));
-	};
-	return _elm_lang$navigation$Native_Navigation.isInternetExplorer11(
-		{ctor: '_Tuple0'}) ? A3(
-		_elm_lang$core$Task$map2,
-		_elm_lang$navigation$Navigation$InternetExplorer,
-		_elm_lang$core$Process$spawn(
-			A3(_elm_lang$dom$Dom_LowLevel$onWindow, 'popstate', _elm_lang$core$Json_Decode$value, reportLocation)),
-		_elm_lang$core$Process$spawn(
-			A3(_elm_lang$dom$Dom_LowLevel$onWindow, 'hashchange', _elm_lang$core$Json_Decode$value, reportLocation))) : A2(
-		_elm_lang$core$Task$map,
-		_elm_lang$navigation$Navigation$Normal,
-		_elm_lang$core$Process$spawn(
-			A3(_elm_lang$dom$Dom_LowLevel$onWindow, 'popstate', _elm_lang$core$Json_Decode$value, reportLocation)));
-};
-var _elm_lang$navigation$Navigation$onEffects = F4(
-	function (router, cmds, subs, _p11) {
-		var _p12 = _p11;
-		var _p15 = _p12.popWatcher;
-		var stepState = function () {
-			var _p13 = {ctor: '_Tuple2', _0: subs, _1: _p15};
-			_v6_2:
-			do {
-				if (_p13._0.ctor === '[]') {
-					if (_p13._1.ctor === 'Just') {
-						return A2(
-							_elm_lang$navigation$Navigation_ops['&>'],
-							_elm_lang$navigation$Navigation$killPopWatcher(_p13._1._0),
-							_elm_lang$core$Task$succeed(
-								A2(_elm_lang$navigation$Navigation$State, subs, _elm_lang$core$Maybe$Nothing)));
-					} else {
-						break _v6_2;
-					}
-				} else {
-					if (_p13._1.ctor === 'Nothing') {
-						return A2(
-							_elm_lang$core$Task$map,
-							function (_p14) {
-								return A2(
-									_elm_lang$navigation$Navigation$State,
-									subs,
-									_elm_lang$core$Maybe$Just(_p14));
-							},
-							_elm_lang$navigation$Navigation$spawnPopWatcher(router));
-					} else {
-						break _v6_2;
-					}
-				}
-			} while(false);
-			return _elm_lang$core$Task$succeed(
-				A2(_elm_lang$navigation$Navigation$State, subs, _p15));
-		}();
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			_elm_lang$core$Task$sequence(
-				A2(
-					_elm_lang$core$List$map,
-					A2(_elm_lang$navigation$Navigation$cmdHelp, router, subs),
-					cmds)),
-			stepState);
-	});
-_elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
-
-var _sporto$erl$Erl$appendPathSegments = F2(
-	function (segments, url) {
-		var newPath = A2(_elm_lang$core$List$append, url.path, segments);
-		return _elm_lang$core$Native_Utils.update(
-			url,
-			{path: newPath});
-	});
-var _sporto$erl$Erl$removeQuery = F2(
-	function (key, url) {
-		var updated = A2(_elm_lang$core$Dict$remove, key, url.query);
-		return _elm_lang$core$Native_Utils.update(
-			url,
-			{query: updated});
-	});
-var _sporto$erl$Erl$setQuery = F3(
-	function (key, val, url) {
-		var updated = A2(_elm_lang$core$Dict$singleton, key, val);
-		return _elm_lang$core$Native_Utils.update(
-			url,
-			{query: updated});
-	});
-var _sporto$erl$Erl$addQuery = F3(
-	function (key, val, url) {
-		var updated = _elm_lang$core$String$isEmpty(val) ? A2(_elm_lang$core$Dict$remove, key, url.query) : A3(_elm_lang$core$Dict$insert, key, val, url.query);
-		return _elm_lang$core$Native_Utils.update(
-			url,
-			{query: updated});
-	});
-var _sporto$erl$Erl$clearQuery = function (url) {
-	return _elm_lang$core$Native_Utils.update(
-		url,
-		{query: _elm_lang$core$Dict$empty});
-};
-var _sporto$erl$Erl$new = {
-	protocol: '',
-	username: '',
-	password: '',
-	host: {ctor: '[]'},
-	path: {ctor: '[]'},
-	hasLeadingSlash: false,
-	hasTrailingSlash: false,
-	port_: 0,
-	hash: '',
-	query: _elm_lang$core$Dict$empty
-};
-var _sporto$erl$Erl$hashToString = function (url) {
-	return _elm_lang$core$String$isEmpty(url.hash) ? '' : A2(_elm_lang$core$Basics_ops['++'], '#', url.hash);
-};
-var _sporto$erl$Erl$trailingSlashComponent = function (url) {
-	return _elm_lang$core$Native_Utils.eq(url.hasTrailingSlash, true) ? '/' : '';
-};
-var _sporto$erl$Erl$portComponent = function (url) {
-	var _p0 = url.port_;
-	switch (_p0) {
-		case 0:
-			return '';
-		case 80:
-			return '';
-		default:
-			return A2(
-				_elm_lang$core$Basics_ops['++'],
-				':',
-				_elm_lang$core$Basics$toString(url.port_));
-	}
-};
-var _sporto$erl$Erl$hostComponent = function (url) {
-	return _elm_lang$http$Http$encodeUri(
-		A2(_elm_lang$core$String$join, '.', url.host));
-};
-var _sporto$erl$Erl$pathComponent = function (url) {
-	var leadingSlash = ((!_elm_lang$core$Native_Utils.eq(
-		_sporto$erl$Erl$hostComponent(url),
-		'')) || url.hasLeadingSlash) ? '/' : '';
-	var encoded = A2(_elm_lang$core$List$map, _elm_lang$http$Http$encodeUri, url.path);
-	return _elm_lang$core$Native_Utils.eq(
-		_elm_lang$core$List$length(url.path),
-		0) ? '' : A2(
-		_elm_lang$core$Basics_ops['++'],
-		leadingSlash,
-		A2(_elm_lang$core$String$join, '/', encoded));
-};
-var _sporto$erl$Erl$protocolComponent = function (url) {
-	var _p1 = url.protocol;
-	if (_p1 === '') {
-		return '';
-	} else {
-		return A2(_elm_lang$core$Basics_ops['++'], url.protocol, '://');
-	}
-};
-var _sporto$erl$Erl$queryToString = function (url) {
-	var tuples = _elm_lang$core$Dict$toList(url.query);
-	var encodedTuples = A2(
-		_elm_lang$core$List$map,
-		function (_p2) {
-			var _p3 = _p2;
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$http$Http$encodeUri(_p3._0),
-				_1: _elm_lang$http$Http$encodeUri(_p3._1)
-			};
-		},
-		tuples);
-	var parts = A2(
-		_elm_lang$core$List$map,
-		function (_p4) {
-			var _p5 = _p4;
-			return A2(
-				_elm_lang$core$Basics_ops['++'],
-				_p5._0,
-				A2(_elm_lang$core$Basics_ops['++'], '=', _p5._1));
-		},
-		encodedTuples);
-	return _elm_lang$core$Dict$isEmpty(url.query) ? '' : A2(
-		_elm_lang$core$Basics_ops['++'],
-		'?',
-		A2(_elm_lang$core$String$join, '&', parts));
-};
-var _sporto$erl$Erl$toString = function (url) {
-	var hash = _sporto$erl$Erl$hashToString(url);
-	var query_ = _sporto$erl$Erl$queryToString(url);
-	var trailingSlash_ = _sporto$erl$Erl$trailingSlashComponent(url);
-	var path_ = _sporto$erl$Erl$pathComponent(url);
-	var port_ = _sporto$erl$Erl$portComponent(url);
-	var host_ = _sporto$erl$Erl$hostComponent(url);
-	var protocol_ = _sporto$erl$Erl$protocolComponent(url);
-	return A2(
-		_elm_lang$core$Basics_ops['++'],
-		protocol_,
-		A2(
-			_elm_lang$core$Basics_ops['++'],
-			host_,
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				port_,
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					path_,
-					A2(
-						_elm_lang$core$Basics_ops['++'],
-						trailingSlash_,
-						A2(_elm_lang$core$Basics_ops['++'], query_, hash))))));
-};
-var _sporto$erl$Erl$queryStringElementToTuple = function (element) {
-	var splitted = A2(_elm_lang$core$String$split, '=', element);
-	var first = A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$core$List$head(splitted));
-	var firstDecoded = A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$http$Http$decodeUri(first));
-	var second = A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$core$List$head(
-			A2(_elm_lang$core$List$drop, 1, splitted)));
-	var secondDecoded = A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$http$Http$decodeUri(second));
-	return {ctor: '_Tuple2', _0: firstDecoded, _1: secondDecoded};
-};
-var _sporto$erl$Erl$queryTuples = function (queryString) {
-	var splitted = A2(_elm_lang$core$String$split, '&', queryString);
-	return _elm_lang$core$String$isEmpty(queryString) ? {ctor: '[]'} : A2(_elm_lang$core$List$map, _sporto$erl$Erl$queryStringElementToTuple, splitted);
-};
-var _sporto$erl$Erl$parseQuery = function (str) {
-	return _elm_lang$core$Dict$fromList(
-		_sporto$erl$Erl$queryTuples(str));
-};
-var _sporto$erl$Erl$extractQuery = function (str) {
-	return A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$core$List$head(
-			A2(
-				_elm_lang$core$String$split,
-				'#',
-				A2(
-					_elm_lang$core$Maybe$withDefault,
-					'',
-					_elm_lang$core$List$head(
-						A2(
-							_elm_lang$core$List$drop,
-							1,
-							A2(_elm_lang$core$String$split, '?', str)))))));
-};
-var _sporto$erl$Erl$queryFromAll = function (all) {
-	return _sporto$erl$Erl$parseQuery(
-		_sporto$erl$Erl$extractQuery(all));
-};
-var _sporto$erl$Erl$extractHash = function (str) {
-	return A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$core$List$head(
-			A2(
-				_elm_lang$core$List$drop,
-				1,
-				A2(_elm_lang$core$String$split, '#', str))));
-};
-var _sporto$erl$Erl$hashFromAll = function (str) {
-	return _sporto$erl$Erl$extractHash(str);
-};
-var _sporto$erl$Erl$parseHost = function (str) {
-	return A2(_elm_lang$core$String$split, '.', str);
-};
-var _sporto$erl$Erl$extractProtocol = function (str) {
-	var parts = A2(_elm_lang$core$String$split, '://', str);
-	var _p6 = _elm_lang$core$List$length(parts);
-	if (_p6 === 1) {
-		return '';
-	} else {
-		return A2(
-			_elm_lang$core$Maybe$withDefault,
-			'',
-			_elm_lang$core$List$head(parts));
-	}
-};
-var _sporto$erl$Erl$extractPort = function (str) {
-	var rx = _elm_lang$core$Regex$regex(':\\d+');
-	var res = A3(
-		_elm_lang$core$Regex$find,
-		_elm_lang$core$Regex$AtMost(1),
-		rx,
-		str);
-	return function (result) {
-		var _p7 = result;
-		if (_p7.ctor === 'Ok') {
-			return _p7._0;
-		} else {
-			var _p8 = _sporto$erl$Erl$extractProtocol(str);
-			switch (_p8) {
-				case 'http':
-					return 80;
-				case 'https':
-					return 443;
-				case 'ftp':
-					return 21;
-				case 'sftp':
-					return 22;
-				default:
-					return 0;
-			}
-		}
-	}(
-		_elm_lang$core$String$toInt(
-			A2(
-				_elm_lang$core$String$dropLeft,
-				1,
-				A2(
-					_elm_lang$core$Maybe$withDefault,
-					'',
-					_elm_lang$core$List$head(
-						A2(
-							_elm_lang$core$List$map,
-							function (_) {
-								return _.match;
-							},
-							res))))));
-};
-var _sporto$erl$Erl$leftFrom = F2(
-	function (delimiter, str) {
-		var parts = A2(_elm_lang$core$String$split, delimiter, str);
-		var head = _elm_lang$core$List$head(parts);
-		var _p9 = _elm_lang$core$List$length(parts);
-		switch (_p9) {
-			case 0:
-				return '';
-			case 1:
-				return '';
-			default:
-				return A2(_elm_lang$core$Maybe$withDefault, '', head);
-		}
-	});
-var _sporto$erl$Erl$leftFromOrSame = F2(
-	function (delimiter, str) {
-		var parts = A2(_elm_lang$core$String$split, delimiter, str);
-		return A2(
-			_elm_lang$core$Maybe$withDefault,
-			'',
-			_elm_lang$core$List$head(parts));
-	});
-var _sporto$erl$Erl$rightFromOrSame = F2(
-	function (delimiter, str) {
-		var parts = A2(_elm_lang$core$String$split, delimiter, str);
-		return A2(
-			_elm_lang$core$Maybe$withDefault,
-			'',
-			_elm_lang$core$List$head(
-				_elm_lang$core$List$reverse(parts)));
-	});
-var _sporto$erl$Erl$extractHost = function (str) {
-	var localhostRx = 'localhost';
-	var dotsRx = '((\\w|-)+\\.)+(\\w|-)+';
-	var rx = A2(
-		_elm_lang$core$Basics_ops['++'],
-		'(',
-		A2(
-			_elm_lang$core$Basics_ops['++'],
-			dotsRx,
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				'|',
-				A2(_elm_lang$core$Basics_ops['++'], localhostRx, ')'))));
-	return A2(
-		_elm_lang$core$Maybe$withDefault,
-		'',
-		_elm_lang$core$List$head(
-			A2(
-				_elm_lang$core$List$map,
-				function (_) {
-					return _.match;
-				},
-				A3(
-					_elm_lang$core$Regex$find,
-					_elm_lang$core$Regex$AtMost(1),
-					_elm_lang$core$Regex$regex(rx),
-					A2(
-						_sporto$erl$Erl$leftFromOrSame,
-						'/',
-						A2(_sporto$erl$Erl$rightFromOrSame, '//', str))))));
-};
-var _sporto$erl$Erl$host = function (str) {
-	return _sporto$erl$Erl$parseHost(
-		_sporto$erl$Erl$extractHost(str));
-};
-var _sporto$erl$Erl$extractPath = function (str) {
-	var host = _sporto$erl$Erl$extractHost(str);
-	return A4(
-		_elm_lang$core$Regex$replace,
-		_elm_lang$core$Regex$AtMost(1),
-		_elm_lang$core$Regex$regex(':\\d+'),
-		function (_p10) {
-			return '';
-		},
-		A4(
-			_elm_lang$core$Regex$replace,
-			_elm_lang$core$Regex$AtMost(1),
-			_elm_lang$core$Regex$regex(host),
-			function (_p11) {
-				return '';
-			},
-			A2(
-				_sporto$erl$Erl$leftFromOrSame,
-				'#',
-				A2(
-					_sporto$erl$Erl$leftFromOrSame,
-					'?',
-					A2(_sporto$erl$Erl$rightFromOrSame, '//', str)))));
-};
-var _sporto$erl$Erl$hasLeadingSlashFromAll = function (str) {
-	return A2(
-		_elm_lang$core$Regex$contains,
-		_elm_lang$core$Regex$regex('^/'),
-		_sporto$erl$Erl$extractPath(str));
-};
-var _sporto$erl$Erl$hasTrailingSlashFromAll = function (str) {
-	return A2(
-		_elm_lang$core$Regex$contains,
-		_elm_lang$core$Regex$regex('/$'),
-		_sporto$erl$Erl$extractPath(str));
-};
-var _sporto$erl$Erl$rightFrom = F2(
-	function (delimiter, str) {
-		var parts = A2(_elm_lang$core$String$split, delimiter, str);
-		var _p12 = _elm_lang$core$List$length(parts);
-		switch (_p12) {
-			case 0:
-				return '';
-			case 1:
-				return '';
-			default:
-				return A2(
-					_elm_lang$core$Maybe$withDefault,
-					'',
-					_elm_lang$core$List$head(
-						_elm_lang$core$List$reverse(parts)));
-		}
-	});
-var _sporto$erl$Erl$notEmpty = function (str) {
-	return !_elm_lang$core$String$isEmpty(str);
-};
-var _sporto$erl$Erl$parsePath = function (str) {
-	return A2(
-		_elm_lang$core$List$map,
-		_elm_lang$core$Maybe$withDefault(''),
-		A2(
-			_elm_lang$core$List$map,
-			_elm_lang$http$Http$decodeUri,
-			A2(
-				_elm_lang$core$List$filter,
-				_sporto$erl$Erl$notEmpty,
-				A2(_elm_lang$core$String$split, '/', str))));
-};
-var _sporto$erl$Erl$pathFromAll = function (str) {
-	return _sporto$erl$Erl$parsePath(
-		_sporto$erl$Erl$extractPath(str));
-};
-var _sporto$erl$Erl$parse = function (str) {
-	return {
-		host: _sporto$erl$Erl$host(str),
-		hash: _sporto$erl$Erl$hashFromAll(str),
-		password: '',
-		path: _sporto$erl$Erl$pathFromAll(str),
-		hasLeadingSlash: _sporto$erl$Erl$hasLeadingSlashFromAll(str),
-		hasTrailingSlash: _sporto$erl$Erl$hasTrailingSlashFromAll(str),
-		port_: _sporto$erl$Erl$extractPort(str),
-		protocol: _sporto$erl$Erl$extractProtocol(str),
-		query: _sporto$erl$Erl$queryFromAll(str),
-		username: ''
-	};
-};
-var _sporto$erl$Erl$Url = function (a) {
-	return function (b) {
-		return function (c) {
-			return function (d) {
-				return function (e) {
-					return function (f) {
-						return function (g) {
-							return function (h) {
-								return function (i) {
-									return function (j) {
-										return {protocol: a, username: b, password: c, host: d, port_: e, path: f, hasLeadingSlash: g, hasTrailingSlash: h, hash: i, query: j};
-									};
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
-};
-
-var _rgrempel$elm_route_url$RouteUrl$url2path = function (url) {
-	return A2(
-		_elm_lang$core$Basics_ops['++'],
-		'/',
-		A2(
-			_elm_lang$core$Basics_ops['++'],
-			A2(_elm_lang$core$String$join, '/', url.path),
-			(url.hasTrailingSlash && (!_elm_lang$core$List$isEmpty(url.path))) ? '/' : ''));
-};
-var _rgrempel$elm_route_url$RouteUrl$eqUrl = F2(
-	function (u1, u2) {
-		return _elm_lang$core$Native_Utils.eq(u1.path, u2.path) && (_elm_lang$core$Native_Utils.eq(u1.hasTrailingSlash, u2.hasTrailingSlash) && (_elm_lang$core$Native_Utils.eq(u1.hash, u2.hash) && _elm_lang$core$Native_Utils.eq(
-			_elm_lang$core$Dict$toList(u1.query),
-			_elm_lang$core$Dict$toList(u2.query))));
-	});
-var _rgrempel$elm_route_url$RouteUrl$checkDistinctUrl = F2(
-	function (old, $new) {
-		return A2(
-			_rgrempel$elm_route_url$RouteUrl$eqUrl,
-			_sporto$erl$Erl$parse($new.url),
-			old) ? _elm_lang$core$Maybe$Nothing : _elm_lang$core$Maybe$Just($new);
-	});
-var _rgrempel$elm_route_url$RouteUrl$mapUrl = F2(
-	function (func, c1) {
-		return _elm_lang$core$Native_Utils.update(
-			c1,
-			{
-				url: func(c1.url)
-			});
-	});
-var _rgrempel$elm_route_url$RouteUrl$normalizeUrl = F2(
-	function (old, change) {
-		return A2(
-			_rgrempel$elm_route_url$RouteUrl$mapUrl,
-			A2(_elm_lang$core$String$startsWith, '?', change.url) ? function (url) {
-				return A2(
-					_elm_lang$core$Basics_ops['++'],
-					_rgrempel$elm_route_url$RouteUrl$url2path(old),
-					url);
-			} : (A2(_elm_lang$core$String$startsWith, '#', change.url) ? function (url) {
-				return A2(
-					_elm_lang$core$Basics_ops['++'],
-					_rgrempel$elm_route_url$RouteUrl$url2path(old),
-					A2(
-						_elm_lang$core$Basics_ops['++'],
-						_sporto$erl$Erl$queryToString(old),
-						url));
-			} : function (url) {
-				return url;
-			}),
-			change);
-	});
-var _rgrempel$elm_route_url$RouteUrl$urlChange2Cmd = function (change) {
-	return function () {
-		var _p0 = change.entry;
-		if (_p0.ctor === 'NewEntry') {
-			return _elm_lang$navigation$Navigation$newUrl;
-		} else {
-			return _elm_lang$navigation$Navigation$modifyUrl;
-		}
-	}()(change.url);
-};
-var _rgrempel$elm_route_url$RouteUrl$runNavigationAppWithFlags = function (app) {
-	return A2(
-		_elm_lang$navigation$Navigation$programWithFlags,
-		app.locationToMessage,
-		{init: app.init, update: app.update, view: app.view, subscriptions: app.subscriptions});
-};
-var _rgrempel$elm_route_url$RouteUrl$runNavigationApp = function (app) {
-	return A2(
-		_elm_lang$navigation$Navigation$program,
-		app.locationToMessage,
-		{init: app.init, update: app.update, view: app.view, subscriptions: app.subscriptions});
-};
-var _rgrempel$elm_route_url$RouteUrl$unwrapMsg = F3(
-	function (handleLocation, handleUserMsg, wrapped) {
-		var _p1 = wrapped;
-		if (_p1.ctor === 'RouterMsg') {
-			return handleLocation(_p1._0);
-		} else {
-			return handleUserMsg(_p1._0);
-		}
-	});
-var _rgrempel$elm_route_url$RouteUrl$unwrapModel = function (_p2) {
-	var _p3 = _p2;
-	return _p3._0;
-};
-var _rgrempel$elm_route_url$RouteUrl$appWithFlags2Common = function (app) {
-	return {delta2url: app.delta2url, location2messages: app.location2messages, update: app.update, subscriptions: app.subscriptions, view: app.view};
-};
-var _rgrempel$elm_route_url$RouteUrl$app2Common = function (app) {
-	return {delta2url: app.delta2url, location2messages: app.location2messages, update: app.update, subscriptions: app.subscriptions, view: app.view};
-};
-var _rgrempel$elm_route_url$RouteUrl$App = F6(
-	function (a, b, c, d, e, f) {
-		return {delta2url: a, location2messages: b, init: c, update: d, subscriptions: e, view: f};
-	});
-var _rgrempel$elm_route_url$RouteUrl$AppWithFlags = F6(
-	function (a, b, c, d, e, f) {
-		return {delta2url: a, location2messages: b, init: c, update: d, subscriptions: e, view: f};
-	});
-var _rgrempel$elm_route_url$RouteUrl$AppCommon = F5(
-	function (a, b, c, d, e) {
-		return {delta2url: a, location2messages: b, update: c, subscriptions: d, view: e};
-	});
-var _rgrempel$elm_route_url$RouteUrl$UrlChange = F2(
-	function (a, b) {
-		return {entry: a, url: b};
-	});
-var _rgrempel$elm_route_url$RouteUrl$RouterModel = F2(
-	function (a, b) {
-		return {reportedUrl: a, expectedUrlChanges: b};
-	});
-var _rgrempel$elm_route_url$RouteUrl$NavigationApp = F5(
-	function (a, b, c, d, e) {
-		return {locationToMessage: a, init: b, update: c, view: d, subscriptions: e};
-	});
-var _rgrempel$elm_route_url$RouteUrl$NavigationAppWithFlags = F5(
-	function (a, b, c, d, e) {
-		return {locationToMessage: a, init: b, update: c, view: d, subscriptions: e};
-	});
-var _rgrempel$elm_route_url$RouteUrl$ModifyEntry = {ctor: 'ModifyEntry'};
-var _rgrempel$elm_route_url$RouteUrl$NewEntry = {ctor: 'NewEntry'};
-var _rgrempel$elm_route_url$RouteUrl$WrappedModel = F2(
-	function (a, b) {
-		return {ctor: 'WrappedModel', _0: a, _1: b};
-	});
-var _rgrempel$elm_route_url$RouteUrl$mapModel = F2(
-	function (mapper, _p4) {
-		var _p5 = _p4;
-		return A2(
-			_rgrempel$elm_route_url$RouteUrl$WrappedModel,
-			mapper(_p5._0),
-			_p5._1);
-	});
-var _rgrempel$elm_route_url$RouteUrl$UserMsg = function (a) {
-	return {ctor: 'UserMsg', _0: a};
-};
-var _rgrempel$elm_route_url$RouteUrl$wrapUserMsg = _rgrempel$elm_route_url$RouteUrl$UserMsg;
-var _rgrempel$elm_route_url$RouteUrl$view = F2(
-	function (app, _p6) {
-		var _p7 = _p6;
-		return A2(
-			_elm_lang$html$Html$map,
-			_rgrempel$elm_route_url$RouteUrl$UserMsg,
-			app.view(_p7._0));
-	});
-var _rgrempel$elm_route_url$RouteUrl$subscriptions = F2(
-	function (app, _p8) {
-		var _p9 = _p8;
-		return A2(
-			_elm_lang$core$Platform_Sub$map,
-			_rgrempel$elm_route_url$RouteUrl$UserMsg,
-			app.subscriptions(_p9._0));
-	});
-var _rgrempel$elm_route_url$RouteUrl$initWithFlags = F4(
-	function (appInit, app, flags, location) {
-		var routerModel = {
-			expectedUrlChanges: 0,
-			reportedUrl: _sporto$erl$Erl$parse(location.href)
-		};
-		var _p10 = A3(
-			_ccapndave$elm_update_extra$Update_Extra$sequence,
-			app.update,
-			app.location2messages(location),
-			appInit(flags));
-		var userModel = _p10._0;
-		var command = _p10._1;
-		return {
-			ctor: '_Tuple2',
-			_0: A2(_rgrempel$elm_route_url$RouteUrl$WrappedModel, userModel, routerModel),
-			_1: A2(_elm_lang$core$Platform_Cmd$map, _rgrempel$elm_route_url$RouteUrl$UserMsg, command)
-		};
-	});
-var _rgrempel$elm_route_url$RouteUrl$init = F3(
-	function (appInit, app, location) {
-		var routerModel = {
-			expectedUrlChanges: 0,
-			reportedUrl: _sporto$erl$Erl$parse(location.href)
-		};
-		var _p11 = A3(
-			_ccapndave$elm_update_extra$Update_Extra$sequence,
-			app.update,
-			app.location2messages(location),
-			appInit);
-		var userModel = _p11._0;
-		var command = _p11._1;
-		return {
-			ctor: '_Tuple2',
-			_0: A2(_rgrempel$elm_route_url$RouteUrl$WrappedModel, userModel, routerModel),
-			_1: A2(_elm_lang$core$Platform_Cmd$map, _rgrempel$elm_route_url$RouteUrl$UserMsg, command)
-		};
-	});
-var _rgrempel$elm_route_url$RouteUrl$update = F3(
-	function (app, msg, _p12) {
-		var _p13 = _p12;
-		var _p21 = _p13._0;
-		var _p20 = _p13._1;
-		var _p14 = msg;
-		if (_p14.ctor === 'RouterMsg') {
-			var _p16 = _p14._0;
-			var newRouterModel = {
-				reportedUrl: _sporto$erl$Erl$parse(_p16.href),
-				expectedUrlChanges: (_elm_lang$core$Native_Utils.cmp(_p20.expectedUrlChanges, 0) > 0) ? (_p20.expectedUrlChanges - 1) : 0
-			};
-			if (_elm_lang$core$Native_Utils.cmp(_p20.expectedUrlChanges, 0) > 0) {
-				return {
-					ctor: '_Tuple2',
-					_0: A2(_rgrempel$elm_route_url$RouteUrl$WrappedModel, _p21, newRouterModel),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-			} else {
-				var _p15 = A3(
-					_ccapndave$elm_update_extra$Update_Extra$sequence,
-					app.update,
-					app.location2messages(_p16),
-					{ctor: '_Tuple2', _0: _p21, _1: _elm_lang$core$Platform_Cmd$none});
-				var newUserModel = _p15._0;
-				var commands = _p15._1;
-				return {
-					ctor: '_Tuple2',
-					_0: A2(_rgrempel$elm_route_url$RouteUrl$WrappedModel, newUserModel, newRouterModel),
-					_1: A2(_elm_lang$core$Platform_Cmd$map, _rgrempel$elm_route_url$RouteUrl$UserMsg, commands)
-				};
-			}
-		} else {
-			var _p17 = A2(app.update, _p14._0, _p21);
-			var newUserModel = _p17._0;
-			var userCommand = _p17._1;
-			var maybeUrlChange = A2(
-				_elm_lang$core$Maybe$andThen,
-				_rgrempel$elm_route_url$RouteUrl$checkDistinctUrl(_p20.reportedUrl),
-				A2(
-					_elm_lang$core$Maybe$map,
-					_rgrempel$elm_route_url$RouteUrl$normalizeUrl(_p20.reportedUrl),
-					A2(app.delta2url, _p21, newUserModel)));
-			var _p18 = maybeUrlChange;
-			if (_p18.ctor === 'Just') {
-				var _p19 = _p18._0;
-				return {
-					ctor: '_Tuple2',
-					_0: A2(
-						_rgrempel$elm_route_url$RouteUrl$WrappedModel,
-						newUserModel,
-						{
-							reportedUrl: _sporto$erl$Erl$parse(_p19.url),
-							expectedUrlChanges: _p20.expectedUrlChanges + 1
-						}),
-					_1: A2(
-						_elm_lang$core$Platform_Cmd$map,
-						_rgrempel$elm_route_url$RouteUrl$UserMsg,
-						_elm_lang$core$Platform_Cmd$batch(
-							{
-								ctor: '::',
-								_0: _rgrempel$elm_route_url$RouteUrl$urlChange2Cmd(_p19),
-								_1: {
-									ctor: '::',
-									_0: userCommand,
-									_1: {ctor: '[]'}
-								}
-							}))
-				};
-			} else {
-				return {
-					ctor: '_Tuple2',
-					_0: A2(_rgrempel$elm_route_url$RouteUrl$WrappedModel, newUserModel, _p20),
-					_1: A2(_elm_lang$core$Platform_Cmd$map, _rgrempel$elm_route_url$RouteUrl$UserMsg, userCommand)
-				};
-			}
-		}
-	});
-var _rgrempel$elm_route_url$RouteUrl$RouterMsg = function (a) {
-	return {ctor: 'RouterMsg', _0: a};
-};
-var _rgrempel$elm_route_url$RouteUrl$wrapLocation = _rgrempel$elm_route_url$RouteUrl$RouterMsg;
-var _rgrempel$elm_route_url$RouteUrl$navigationApp = function (app) {
-	var common = _rgrempel$elm_route_url$RouteUrl$app2Common(app);
-	return {
-		locationToMessage: _rgrempel$elm_route_url$RouteUrl$RouterMsg,
-		init: A2(_rgrempel$elm_route_url$RouteUrl$init, app.init, common),
-		update: _rgrempel$elm_route_url$RouteUrl$update(common),
-		view: _rgrempel$elm_route_url$RouteUrl$view(common),
-		subscriptions: _rgrempel$elm_route_url$RouteUrl$subscriptions(common)
-	};
-};
-var _rgrempel$elm_route_url$RouteUrl$program = function (_p22) {
-	return _rgrempel$elm_route_url$RouteUrl$runNavigationApp(
-		_rgrempel$elm_route_url$RouteUrl$navigationApp(_p22));
-};
-var _rgrempel$elm_route_url$RouteUrl$navigationAppWithFlags = function (app) {
-	var common = _rgrempel$elm_route_url$RouteUrl$appWithFlags2Common(app);
-	return {
-		locationToMessage: _rgrempel$elm_route_url$RouteUrl$RouterMsg,
-		init: A2(_rgrempel$elm_route_url$RouteUrl$initWithFlags, app.init, common),
-		update: _rgrempel$elm_route_url$RouteUrl$update(common),
-		view: _rgrempel$elm_route_url$RouteUrl$view(common),
-		subscriptions: _rgrempel$elm_route_url$RouteUrl$subscriptions(common)
-	};
-};
-var _rgrempel$elm_route_url$RouteUrl$programWithFlags = function (_p23) {
-	return _rgrempel$elm_route_url$RouteUrl$runNavigationAppWithFlags(
-		_rgrempel$elm_route_url$RouteUrl$navigationAppWithFlags(_p23));
-};
-
+var _user$project$Feedback$typeformWidget = '<div class=\'typeform-widget\' data-url=\'https://matyjas.typeform.com/to/dXro9E\' data-text=\'presentation-feedback\' style=\'width:100%;height:600px;\'></div><div style=\'font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;\'>Powered by<a href=\'https://www.typeform.com/examples/?utm_campaign=dXro9E&amp;utm_source=typeform.com-3081221-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-poweredbytypeform&amp;utm_term=EN\' style=\'color: #999\' target=\'_blank\'>Typeform</a></div>';
 var _user$project$Feedback$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}id=id+\'_\';if(!gi.call(d,id)){qs=ce.call(d,\'link\');qs.rel=\'stylesheet\';qs.id=id;qs.href=b+\'share-button.css\';s=gt.call(d,\'head\')[0];s.appendChild(qs,s)}})()</script>';
 var _user$project$Feedback$view = A2(
-	_elm_lang$html$Html$div,
+	_elm_lang$html$Html$article,
 	{
 		ctor: '::',
-		_0: A2(
-			_elm_lang$html$Html_Attributes$property,
-			'innerHTML',
-			_elm_lang$core$Json_Encode$string(_user$project$Feedback$typeformButton)),
-		_1: {ctor: '[]'}
+		_0: _elm_lang$html$Html_Attributes$id('Feedback'),
+		_1: {
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html_Attributes$property,
+				'innerHTML',
+				_elm_lang$core$Json_Encode$string(_user$project$Feedback$typeformWidget)),
+			_1: {ctor: '[]'}
+		}
 	},
 	{ctor: '[]'});
-
-var _user$project$Types$Meta = {ctor: 'Meta'};
-var _user$project$Types$Feedback = {ctor: 'Feedback'};
-var _user$project$Types$Widgets = {ctor: 'Widgets'};
-var _user$project$Types$Links = {ctor: 'Links'};
-var _user$project$Types$Talks = {ctor: 'Talks'};
-var _user$project$Types$Here = {ctor: 'Here'};
-var _user$project$Types$Change = function (a) {
-	return {ctor: 'Change', _0: a};
-};
 
 var _user$project$Here$view = A2(
 	_elm_lang$html$Html$article,
@@ -10618,20 +8183,15 @@ var _user$project$Here$view = A2(
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('I have presented a number of talks over the last few years. Please find a list of them under '),
+					_0: _elm_lang$html$Html$text('The main attraction here is a long list of '),
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$span,
+							_elm_lang$html$Html$a,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(
-									_user$project$Types$Change(_user$project$Types$Talks)),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('nav'),
-									_1: {ctor: '[]'}
-								}
+								_0: _elm_lang$html$Html_Attributes$href('#Talks'),
+								_1: {ctor: '[]'}
 							},
 							{
 								ctor: '::',
@@ -10648,20 +8208,15 @@ var _user$project$Here$view = A2(
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('The classic list of places to find me on the web is under '),
+						_0: _elm_lang$html$Html$text('There is also a classic list of places to find me on the web is under '),
 						_1: {
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$span,
+								_elm_lang$html$Html$a,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(
-										_user$project$Types$Change(_user$project$Types$Links)),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('nav'),
-										_1: {ctor: '[]'}
-									}
+									_0: _elm_lang$html$Html_Attributes$href('#Links'),
+									_1: {ctor: '[]'}
 								},
 								{
 									ctor: '::',
@@ -10682,16 +8237,11 @@ var _user$project$Here$view = A2(
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$span,
+									_elm_lang$html$Html$a,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Types$Change(_user$project$Types$Meta)),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('nav'),
-											_1: {ctor: '[]'}
-										}
+										_0: _elm_lang$html$Html_Attributes$href('#Meta'),
+										_1: {ctor: '[]'}
 									},
 									{
 										ctor: '::',
@@ -10700,7 +8250,7 @@ var _user$project$Here$view = A2(
 									}),
 								_1: {
 									ctor: '::',
-									_0: _elm_lang$html$Html$text(' (PS It was fun!).'),
+									_0: _elm_lang$html$Html$text(' (PS It was fun :) .'),
 									_1: {ctor: '[]'}
 								}
 							}
@@ -10712,51 +8262,18 @@ var _user$project$Here$view = A2(
 	});
 
 var _user$project$Links$view = A2(
-	_elm_lang$html$Html$ul,
-	{ctor: '[]'},
+	_elm_lang$html$Html$article,
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$id('Links'),
+		_1: {ctor: '[]'}
+	},
 	{
 		ctor: '::',
 		_0: A2(
-			_elm_lang$html$Html$li,
+			_elm_lang$html$Html$ul,
 			{ctor: '[]'},
 			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$a,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$href('https://twitter.com/matyjas'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('@matyjas'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}),
-		_1: {
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$li,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$a,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$href('https://uk.linkedin.com/in/matyjas'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('linkedin/matyjas'),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$li,
@@ -10767,29 +8284,73 @@ var _user$project$Links$view = A2(
 							_elm_lang$html$Html$a,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas'),
+								_0: _elm_lang$html$Html_Attributes$href('https://twitter.com/matyjas'),
 								_1: {ctor: '[]'}
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('github/matyjas'),
+								_0: _elm_lang$html$Html$text('@matyjas'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
-			}
-		}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$li,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$href('https://uk.linkedin.com/in/matyjas'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('linkedin/matyjas'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$li,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$a,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$href('https://github.com/matyjas'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('github/matyjas'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}
+			}),
+		_1: {ctor: '[]'}
 	});
 
 var _user$project$Talks$renderTalk = function (talk) {
 	return A2(
-		_elm_lang$html$Html$article,
+		_elm_lang$html$Html$section,
 		{ctor: '[]'},
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$h3,
+				_elm_lang$html$Html$h4,
 				{ctor: '[]'},
 				{
 					ctor: '::',
@@ -10809,35 +8370,39 @@ var _user$project$Talks$renderTalk = function (talk) {
 };
 var _user$project$Talks$all = {
 	ctor: '::',
-	_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017'},
+	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol'},
 	_1: {
 		ctor: '::',
-		_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf'},
+		_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017'},
 		_1: {
 			ctor: '::',
-			_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World'},
+			_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf'},
 			_1: {
 				ctor: '::',
-				_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London'},
+				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World'},
 				_1: {
 					ctor: '::',
-					_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit'},
+					_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London'},
 					_1: {
 						ctor: '::',
-						_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian'},
+						_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit'},
 						_1: {
 							ctor: '::',
-							_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies'},
+							_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian'},
 							_1: {
 								ctor: '::',
-								_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web'},
+								_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies'},
 								_1: {
 									ctor: '::',
-									_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London'},
+									_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web'},
 									_1: {
 										ctor: '::',
-										_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community'},
-										_1: {ctor: '[]'}
+										_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London'},
+										_1: {
+											ctor: '::',
+											_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community'},
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -10849,8 +8414,12 @@ var _user$project$Talks$all = {
 	}
 };
 var _user$project$Talks$view = A2(
-	_elm_lang$html$Html$div,
-	{ctor: '[]'},
+	_elm_lang$html$Html$article,
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$id('Talks'),
+		_1: {ctor: '[]'}
+	},
 	A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
 var _user$project$Talks$Talk = F2(
 	function (a, b) {
@@ -10859,7 +8428,11 @@ var _user$project$Talks$Talk = F2(
 
 var _user$project$Meta$view = A2(
 	_elm_lang$html$Html$article,
-	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: _elm_lang$html$Html_Attributes$id('Meta'),
+		_1: {ctor: '[]'}
+	},
 	{
 		ctor: '::',
 		_0: A2(
@@ -10964,210 +8537,6 @@ var _user$project$Meta$view = A2(
 		_1: {ctor: '[]'}
 	});
 
-var _user$project$Main$hashSuffix = function (location) {
-	return _elm_lang$core$List$head(
-		A2(
-			_elm_lang$core$List$drop,
-			1,
-			A2(_elm_lang$core$String$split, '#', location.href)));
-};
-var _user$project$Main$delta2url = F2(
-	function (previous, current) {
-		return _elm_lang$core$Maybe$Nothing;
-	});
-var _user$project$Main$location2messages = function (location) {
-	var _p0 = _user$project$Main$hashSuffix(location);
-	if (_p0.ctor === 'Just') {
-		switch (_p0._0) {
-			case 'talks':
-				return {
-					ctor: '::',
-					_0: _user$project$Types$Change(_user$project$Types$Talks),
-					_1: {ctor: '[]'}
-				};
-			case 'links':
-				return {
-					ctor: '::',
-					_0: _user$project$Types$Change(_user$project$Types$Links),
-					_1: {ctor: '[]'}
-				};
-			case 'feedback':
-				return {
-					ctor: '::',
-					_0: _user$project$Types$Change(_user$project$Types$Feedback),
-					_1: {ctor: '[]'}
-				};
-			case 'meta':
-				return {
-					ctor: '::',
-					_0: _user$project$Types$Change(_user$project$Types$Meta),
-					_1: {ctor: '[]'}
-				};
-			default:
-				return {
-					ctor: '::',
-					_0: _user$project$Types$Change(_user$project$Types$Here),
-					_1: {ctor: '[]'}
-				};
-		}
-	} else {
-		return {
-			ctor: '::',
-			_0: _user$project$Types$Change(_user$project$Types$Here),
-			_1: {ctor: '[]'}
-		};
-	}
-};
-var _user$project$Main$subscriptions = function (model) {
-	return _elm_lang$core$Platform_Sub$none;
-};
-var _user$project$Main$extractModel = function (msg) {
-	var _p1 = msg;
-	return _p1._0;
-};
-var _user$project$Main$selected = F2(
-	function (msg, model) {
-		return _elm_lang$core$Native_Utils.eq(
-			model,
-			_user$project$Main$extractModel(msg)) ? true : false;
-	});
-var _user$project$Main$contentForModel = function (model) {
-	var _p2 = model;
-	switch (_p2.ctor) {
-		case 'Here':
-			return _user$project$Here$view;
-		case 'Talks':
-			return _user$project$Talks$view;
-		case 'Links':
-			return _user$project$Links$view;
-		case 'Widgets':
-			return _elm_lang$html$Html$text('Widgets');
-		case 'Feedback':
-			return _user$project$Feedback$view;
-		default:
-			return _user$project$Meta$view;
-	}
-};
-var _user$project$Main$navSpace = function (_p3) {
-	var _p4 = _p3;
-	return A2(
-		_elm_lang$html$Html$span,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('nav'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text(' | '),
-			_1: {ctor: '[]'}
-		});
-};
-var _user$project$Main$navSpan = F3(
-	function (msg, label, model) {
-		return A2(
-			_elm_lang$html$Html$span,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Events$onClick(msg),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$classList(
-						{
-							ctor: '::',
-							_0: {ctor: '_Tuple2', _0: 'nav', _1: true},
-							_1: {
-								ctor: '::',
-								_0: {
-									ctor: '_Tuple2',
-									_0: 'selected',
-									_1: A2(_user$project$Main$selected, msg, model)
-								},
-								_1: {ctor: '[]'}
-							}
-						}),
-					_1: {ctor: '[]'}
-				}
-			},
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html$text(label),
-				_1: {ctor: '[]'}
-			});
-	});
-var _user$project$Main$navs = function (model) {
-	return A2(
-		_elm_lang$html$Html$h1,
-		{ctor: '[]'},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$nav,
-				{ctor: '[]'},
-				{
-					ctor: '::',
-					_0: A3(
-						_user$project$Main$navSpan,
-						_user$project$Types$Change(_user$project$Types$Here),
-						'Here',
-						model),
-					_1: {
-						ctor: '::',
-						_0: _user$project$Main$navSpace(
-							{ctor: '_Tuple0'}),
-						_1: {
-							ctor: '::',
-							_0: A3(
-								_user$project$Main$navSpan,
-								_user$project$Types$Change(_user$project$Types$Talks),
-								'Talks',
-								model),
-							_1: {
-								ctor: '::',
-								_0: _user$project$Main$navSpace(
-									{ctor: '_Tuple0'}),
-								_1: {
-									ctor: '::',
-									_0: A3(
-										_user$project$Main$navSpan,
-										_user$project$Types$Change(_user$project$Types$Links),
-										'Links',
-										model),
-									_1: {
-										ctor: '::',
-										_0: _user$project$Main$navSpace(
-											{ctor: '_Tuple0'}),
-										_1: {
-											ctor: '::',
-											_0: A3(
-												_user$project$Main$navSpan,
-												_user$project$Types$Change(_user$project$Types$Feedback),
-												'Feedback',
-												model),
-											_1: {
-												ctor: '::',
-												_0: _user$project$Main$navSpace(
-													{ctor: '_Tuple0'}),
-												_1: {
-													ctor: '::',
-													_0: A3(
-														_user$project$Main$navSpan,
-														_user$project$Types$Change(_user$project$Types$Meta),
-														'Meta',
-														model),
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}),
-			_1: {ctor: '[]'}
-		});
-};
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -11178,25 +8547,37 @@ var _user$project$Main$view = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: _user$project$Main$navs(model),
+			_0: _user$project$Here$view,
 			_1: {
 				ctor: '::',
-				_0: _user$project$Main$contentForModel(model),
-				_1: {ctor: '[]'}
+				_0: _user$project$Talks$view,
+				_1: {
+					ctor: '::',
+					_0: _user$project$Links$view,
+					_1: {
+						ctor: '::',
+						_0: _user$project$Meta$view,
+						_1: {
+							ctor: '::',
+							_0: _user$project$Feedback$view,
+							_1: {ctor: '[]'}
+						}
+					}
+				}
 			}
 		});
 };
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		return {
-			ctor: '_Tuple2',
-			_0: _user$project$Main$extractModel(msg),
-			_1: _elm_lang$core$Platform_Cmd$none
-		};
+		return {};
 	});
-var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Types$Here, _1: _elm_lang$core$Platform_Cmd$none};
-var _user$project$Main$main = _rgrempel$elm_route_url$RouteUrl$program(
-	{delta2url: _user$project$Main$delta2url, location2messages: _user$project$Main$location2messages, update: _user$project$Main$update, view: _user$project$Main$view, init: _user$project$Main$init, subscriptions: _user$project$Main$subscriptions})();
+var _user$project$Main$model = {};
+var _user$project$Main$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Main$model, view: _user$project$Main$view, update: _user$project$Main$update})();
+var _user$project$Main$Model = {};
+var _user$project$Main$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
 
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
