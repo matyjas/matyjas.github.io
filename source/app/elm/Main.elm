@@ -37,8 +37,8 @@ view model =
          Here.view
         ,Talks.view
         ,Links.view
-        ,Meta.view
         ,Feedback.view
+        ,Meta.view
         ]
 
             

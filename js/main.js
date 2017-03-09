@@ -8146,7 +8146,7 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
 var _user$project$Feedback$typeformWidget = '<div class=\'typeform-widget\' data-url=\'https://matyjas.typeform.com/to/dXro9E\' data-text=\'presentation-feedback\' style=\'width:90%;height:600px;\'></div><div style=\'font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;\'>Powered by<a href=\'https://www.typeform.com/examples/?utm_campaign=dXro9E&amp;utm_source=typeform.com-3081221-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-poweredbytypeform&amp;utm_term=EN\' style=\'color: #999\' target=\'_blank\'>Typeform</a></div>';
-var _user$project$Feedback$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id=\'typef_orm_share\',b=\'https://s3-eu-west-1.amazonaws.com/share.typeform.com/\';if(!gi.call(d,id)){js=ce.call(d,\'script\');js.id=id;js.src=b+\'share.js\';q=gt.call(d,\'script\')[0];q.parentNode.insertBefore(js,q)}id=id+\'_\';if(!gi.call(d,id)){qs=ce.call(d,\'link\');qs.rel=\'stylesheet\';qs.id=id;qs.href=b+\'share-button.css\';s=gt.call(d,\'head\')[0];s.appendChild(qs,s)}})()</script>';
+var _user$project$Feedback$typeformButton = '<a class=\'typeform-share button\' href=\'https://matyjas.typeform.com/to/dXro9E\' data-mode=\'1\' target=\'_blank\'>Super presentation survey under here, click me!</a>';
 var _user$project$Feedback$view = A2(
 	_elm_lang$html$Html$article,
 	{
@@ -8157,7 +8157,7 @@ var _user$project$Feedback$view = A2(
 			_0: A2(
 				_elm_lang$html$Html_Attributes$property,
 				'innerHTML',
-				_elm_lang$core$Json_Encode$string(_user$project$Feedback$typeformWidget)),
+				_elm_lang$core$Json_Encode$string(_user$project$Feedback$typeformButton)),
 			_1: {ctor: '[]'}
 		}
 	},
@@ -8556,10 +8556,10 @@ var _user$project$Main$view = function (model) {
 					_0: _user$project$Links$view,
 					_1: {
 						ctor: '::',
-						_0: _user$project$Meta$view,
+						_0: _user$project$Feedback$view,
 						_1: {
 							ctor: '::',
-							_0: _user$project$Feedback$view,
+							_0: _user$project$Meta$view,
 							_1: {ctor: '[]'}
 						}
 					}
