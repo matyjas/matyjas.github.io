@@ -339,14 +339,6 @@ require.register("elm/Feedback.elm", function(exports, require, module) {
 
 });
 
-;require.register("elm/Func.elm", function(exports, require, module) {
-
-});
-
-;require.register("elm/Header.elm", function(exports, require, module) {
-
-});
-
 ;require.register("elm/Here.elm", function(exports, require, module) {
 
 });
@@ -364,10 +356,6 @@ require.register("elm/Feedback.elm", function(exports, require, module) {
 });
 
 ;require.register("elm/Talks.elm", function(exports, require, module) {
-
-});
-
-;require.register("elm/Types.elm", function(exports, require, module) {
 
 });
 
