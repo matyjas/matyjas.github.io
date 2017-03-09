@@ -17,4 +17,4 @@ typeformButton =
         
 typeformWidget : String
 typeformWidget =
-    "<div class='typeform-widget' data-url='https://matyjas.typeform.com/to/dXro9E' data-text='presentation-feedback' style='width:100%;height:600px;'></div><div style='font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;'>Powered by<a href='https://www.typeform.com/examples/?utm_campaign=dXro9E&amp;utm_source=typeform.com-3081221-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-poweredbytypeform&amp;utm_term=EN' style='color: #999' target='_blank'>Typeform</a></div>"
+    "<div class='typeform-widget' data-url='https://matyjas.typeform.com/to/dXro9E' data-text='presentation-feedback' style='width:90%;height:600px;'></div><div style='font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;'>Powered by<a href='https://www.typeform.com/examples/?utm_campaign=dXro9E&amp;utm_source=typeform.com-3081221-Basic&amp;utm_medium=typeform&amp;utm_content=typeform-embedded-poweredbytypeform&amp;utm_term=EN' style='color: #999' target='_blank'>Typeform</a></div>"
