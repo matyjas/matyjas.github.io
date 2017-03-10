@@ -8208,19 +8208,19 @@ var _user$project$Here$view = A2(
 					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('There is also a classic list of places to find me on the web is under '),
+						_0: _elm_lang$html$Html$text('I am trying to improve my public speaking so I also have a little '),
 						_1: {
 							ctor: '::',
 							_0: A2(
 								_elm_lang$html$Html$a,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$href('#Links'),
+									_0: _elm_lang$html$Html_Attributes$href('#Feedback'),
 									_1: {ctor: '[]'}
 								},
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html$text('Links.'),
+									_0: _elm_lang$html$Html$text('Feedback button.'),
 									_1: {ctor: '[]'}
 								}),
 							_1: {ctor: '[]'}
@@ -8233,29 +8233,55 @@ var _user$project$Here$view = A2(
 						{ctor: '[]'},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Info about how this site was built is under '),
+							_0: _elm_lang$html$Html$text('Other places to find me on the web are under '),
 							_1: {
 								ctor: '::',
 								_0: A2(
 									_elm_lang$html$Html$a,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$href('#Meta'),
+										_0: _elm_lang$html$Html_Attributes$href('#Links'),
 										_1: {ctor: '[]'}
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('Meta'),
+										_0: _elm_lang$html$Html$text('Links.'),
 										_1: {ctor: '[]'}
 									}),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html$text(' (PS It was fun :) .'),
-									_1: {ctor: '[]'}
-								}
+								_1: {ctor: '[]'}
 							}
 						}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$p,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Info about how this site was built is under '),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$a,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$href('#Meta'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Meta'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(' (PS It was fun :) .'),
+										_1: {ctor: '[]'}
+									}
+								}
+							}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		}
@@ -8553,10 +8579,10 @@ var _user$project$Main$view = function (model) {
 				_0: _user$project$Talks$view,
 				_1: {
 					ctor: '::',
-					_0: _user$project$Links$view,
+					_0: _user$project$Feedback$view,
 					_1: {
 						ctor: '::',
-						_0: _user$project$Feedback$view,
+						_0: _user$project$Links$view,
 						_1: {
 							ctor: '::',
 							_0: _user$project$Meta$view,

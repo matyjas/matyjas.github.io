@@ -13,7 +13,11 @@ view =
                      , a [ href "#Talks" ] [ text "Talks." ]
                      ]
                , p [] [
-                      text "There is also a classic list of places to find me on the web is under "
+                      text "I am trying to improve my public speaking so I also have a little "
+                     , a [ href "#Feedback" ] [ text "Feedback button." ]
+                      ]
+               , p [] [
+                      text "Other places to find me on the web are under "
                      ,a [ href "#Links" ] [ text "Links." ]
                      ]
                , p [] [
