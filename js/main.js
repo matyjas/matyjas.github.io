@@ -8380,7 +8380,18 @@ var _user$project$Talks$renderTalk = function (talk) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text(talk.title),
+					_0: A2(
+						_elm_lang$html$Html$a,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$href(talk.url),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(talk.title),
+							_1: {ctor: '[]'}
+						}),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -8396,37 +8407,37 @@ var _user$project$Talks$renderTalk = function (talk) {
 };
 var _user$project$Talks$all = {
 	ctor: '::',
-	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol'},
+	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/'},
 	_1: {
 		ctor: '::',
-		_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017'},
+		_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker'},
 		_1: {
 			ctor: '::',
-			_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf'},
+			_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/'},
 			_1: {
 				ctor: '::',
-				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World'},
+				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-'},
 				_1: {
 					ctor: '::',
-					_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London'},
+					_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/'},
 					_1: {
 						ctor: '::',
-						_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit'},
+						_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/'},
 						_1: {
 							ctor: '::',
-							_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian'},
+							_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/'},
 							_1: {
 								ctor: '::',
-								_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies'},
+								_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/'},
 								_1: {
 									ctor: '::',
-									_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web'},
+									_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/'},
 									_1: {
 										ctor: '::',
-										_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London'},
+										_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/'},
 										_1: {
 											ctor: '::',
-											_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community'},
+											_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community', url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/'},
 											_1: {ctor: '[]'}
 										}
 									}
@@ -8447,9 +8458,9 @@ var _user$project$Talks$view = A2(
 		_1: {ctor: '[]'}
 	},
 	A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
-var _user$project$Talks$Talk = F2(
-	function (a, b) {
-		return {title: a, event: b};
+var _user$project$Talks$Talk = F3(
+	function (a, b, c) {
+		return {title: a, event: b, url: c};
 	});
 
 var _user$project$Meta$view = A2(
