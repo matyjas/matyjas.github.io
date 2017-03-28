@@ -8369,6 +8369,25 @@ var _user$project$Links$view = A2(
 		_1: {ctor: '[]'}
 	});
 
+var _user$project$Talks$maybeRenderVideoLink = function (talk) {
+	var _p0 = talk.video;
+	if (_p0.ctor === 'Nothing') {
+		return _elm_lang$html$Html$text('');
+	} else {
+		return A2(
+			_elm_lang$html$Html$a,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$href(_p0._0),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('» video'),
+				_1: {ctor: '[]'}
+			});
+	}
+};
 var _user$project$Talks$renderTalk = function (talk) {
 	return A2(
 		_elm_lang$html$Html$section,
@@ -8400,47 +8419,65 @@ var _user$project$Talks$renderTalk = function (talk) {
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$html$Html$text(talk.event),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(', '),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Talks$maybeRenderVideoLink(talk),
+							_1: {ctor: '[]'}
+						}
+					}
 				}
 			}
 		});
 };
 var _user$project$Talks$all = {
 	ctor: '::',
-	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'Swift London', url: 'https://www.meetup.com/swiftlondon/events/238562063/'},
+	_0: {
+		title: 'Pillarisation: modular architecture using pillars at Hotels.com',
+		event: 'Swift London',
+		url: 'https://www.meetup.com/swiftlondon/events/238562063/',
+		video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/10045-pillarisation-modular-architecture-at-hotels-com')
+	},
 	_1: {
 		ctor: '::',
-		_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/'},
+		_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/', video: _elm_lang$core$Maybe$Nothing},
 		_1: {
 			ctor: '::',
-			_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker'},
+			_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker', video: _elm_lang$core$Maybe$Nothing},
 			_1: {
 				ctor: '::',
-				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/'},
+				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/', video: _elm_lang$core$Maybe$Nothing},
 				_1: {
 					ctor: '::',
-					_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-'},
+					_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-', video: _elm_lang$core$Maybe$Nothing},
 					_1: {
 						ctor: '::',
-						_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/'},
+						_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/', video: _elm_lang$core$Maybe$Nothing},
 						_1: {
 							ctor: '::',
-							_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/'},
+							_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/', video: _elm_lang$core$Maybe$Nothing},
 							_1: {
 								ctor: '::',
-								_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/'},
+								_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/', video: _elm_lang$core$Maybe$Nothing},
 								_1: {
 									ctor: '::',
-									_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/'},
+									_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/', video: _elm_lang$core$Maybe$Nothing},
 									_1: {
 										ctor: '::',
-										_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/'},
+										_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/', video: _elm_lang$core$Maybe$Nothing},
 										_1: {
 											ctor: '::',
-											_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/'},
+											_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/', video: _elm_lang$core$Maybe$Nothing},
 											_1: {
 												ctor: '::',
-												_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community', url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/'},
+												_0: {
+													title: 'Reviewing Code Reviews',
+													event: 'London Software Craftmanship Community',
+													url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/',
+													video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/6958-code-reviews-are-fast')
+												},
 												_1: {ctor: '[]'}
 											}
 										}
@@ -8462,9 +8499,9 @@ var _user$project$Talks$view = A2(
 		_1: {ctor: '[]'}
 	},
 	A2(_elm_lang$core$List$map, _user$project$Talks$renderTalk, _user$project$Talks$all));
-var _user$project$Talks$Talk = F3(
-	function (a, b, c) {
-		return {title: a, event: b, url: c};
+var _user$project$Talks$Talk = F4(
+	function (a, b, c, d) {
+		return {title: a, event: b, url: c, video: d};
 	});
 
 var _user$project$Meta$view = A2(
