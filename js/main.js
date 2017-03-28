@@ -8407,38 +8407,42 @@ var _user$project$Talks$renderTalk = function (talk) {
 };
 var _user$project$Talks$all = {
 	ctor: '::',
-	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/'},
+	_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'Swift London', url: 'https://www.meetup.com/swiftlondon/events/238562063/'},
 	_1: {
 		ctor: '::',
-		_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker'},
+		_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/'},
 		_1: {
 			ctor: '::',
-			_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/'},
+			_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker'},
 			_1: {
 				ctor: '::',
-				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-'},
+				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/'},
 				_1: {
 					ctor: '::',
-					_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/'},
+					_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-'},
 					_1: {
 						ctor: '::',
-						_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/'},
+						_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/'},
 						_1: {
 							ctor: '::',
-							_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/'},
+							_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/'},
 							_1: {
 								ctor: '::',
-								_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/'},
+								_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/'},
 								_1: {
 									ctor: '::',
-									_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/'},
+									_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/'},
 									_1: {
 										ctor: '::',
-										_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/'},
+										_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/'},
 										_1: {
 											ctor: '::',
-											_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community', url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/'},
-											_1: {ctor: '[]'}
+											_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/'},
+											_1: {
+												ctor: '::',
+												_0: {title: 'Reviewing Code Reviews', event: 'London Software Craftmanship Community', url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/'},
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}

@@ -13,6 +13,10 @@ type alias Talk =
 all : List Talk
 all = [
  {title = "Pillarisation: modular architecture using pillars at Hotels.com",
+  event = "Swift London",
+  url = "https://www.meetup.com/swiftlondon/events/238562063/"},
+      
+ {title = "Pillarisation: modular architecture using pillars at Hotels.com",
   event = "SWMobile in Bristol",
   url = "https://www.meetup.com/swmobile/events/237190732/"},
      
