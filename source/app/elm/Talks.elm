@@ -13,6 +13,21 @@ type alias Talk =
 
 all : List Talk
 all = [
+ {title = "How do you avoid your chatbot going rogue?",
+  event = "Apps World Evolution - Bot World",
+  url = "http://techxlr82017.mapyourshow.com/7_0/sessions/session-details.cfm?ScheduleID=1842",
+  video = Nothing },
+
+ {title = "Opening the door to innovation and winning the next generation of customers",
+  event = "Millennial 20/20",
+  url = "http://millennial20-20.com/london2017/speakers/",
+  video = Nothing },
+
+ {title = "The Not-a-Dojo Swift Challenge 👩‍💻👨‍💻 ",
+  event = "Swift London",
+  url = "https://www.meetup.com/swiftlondon/events/239383089/",    
+  video = Nothing },
+     
  {title = "Pillarisation: modular architecture using pillars at Hotels.com",
   event = "Swift London",
   url = "https://www.meetup.com/swiftlondon/events/238562063/",

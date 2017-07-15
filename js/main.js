@@ -8434,51 +8434,63 @@ var _user$project$Talks$renderTalk = function (talk) {
 };
 var _user$project$Talks$all = {
 	ctor: '::',
-	_0: {
-		title: 'Pillarisation: modular architecture using pillars at Hotels.com',
-		event: 'Swift London',
-		url: 'https://www.meetup.com/swiftlondon/events/238562063/',
-		video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/10045-pillarisation-modular-architecture-at-hotels-com')
-	},
+	_0: {title: 'How do you avoid your chatbot going rogue?', event: 'Apps World Evolution - Bot World', url: 'http://techxlr82017.mapyourshow.com/7_0/sessions/session-details.cfm?ScheduleID=1842', video: _elm_lang$core$Maybe$Nothing},
 	_1: {
 		ctor: '::',
-		_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/', video: _elm_lang$core$Maybe$Nothing},
+		_0: {title: 'Opening the door to innovation and winning the next generation of customers', event: 'Millennial 20/20', url: 'http://millennial20-20.com/london2017/speakers/', video: _elm_lang$core$Maybe$Nothing},
 		_1: {
 			ctor: '::',
-			_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker', video: _elm_lang$core$Maybe$Nothing},
+			_0: {title: 'The Not-a-Dojo Swift Challenge 👩‍💻👨‍💻 ', event: 'Swift London', url: 'https://www.meetup.com/swiftlondon/events/239383089/', video: _elm_lang$core$Maybe$Nothing},
 			_1: {
 				ctor: '::',
-				_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/', video: _elm_lang$core$Maybe$Nothing},
+				_0: {
+					title: 'Pillarisation: modular architecture using pillars at Hotels.com',
+					event: 'Swift London',
+					url: 'https://www.meetup.com/swiftlondon/events/238562063/',
+					video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/10045-pillarisation-modular-architecture-at-hotels-com')
+				},
 				_1: {
 					ctor: '::',
-					_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-', video: _elm_lang$core$Maybe$Nothing},
+					_0: {title: 'Pillarisation: modular architecture using pillars at Hotels.com', event: 'SWMobile in Bristol', url: 'https://www.meetup.com/swmobile/events/237190732/', video: _elm_lang$core$Maybe$Nothing},
 					_1: {
 						ctor: '::',
-						_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/', video: _elm_lang$core$Maybe$Nothing},
+						_0: {title: 'Chatbots - An Existential Crisis', event: 'Mobile Shopping 2017', url: 'http://mobileshoppingeu2017.wbresearch.com/maciej-matyjas-speaker', video: _elm_lang$core$Maybe$Nothing},
 						_1: {
 							ctor: '::',
-							_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/', video: _elm_lang$core$Maybe$Nothing},
+							_0: {title: 'What Hotels.com learned building a chatbot', event: 'Digital Transformation Conf', url: 'http://digitaltransformationconf.co.uk/', video: _elm_lang$core$Maybe$Nothing},
 							_1: {
 								ctor: '::',
-								_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/', video: _elm_lang$core$Maybe$Nothing},
+								_0: {title: 'What Hotels.com learned building a chatbot', event: 'Apps World', url: 'https://tmt.knect365.com/apps-world/speakers/maciej-matyjas-', video: _elm_lang$core$Maybe$Nothing},
 								_1: {
 									ctor: '::',
-									_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/', video: _elm_lang$core$Maybe$Nothing},
+									_0: {title: 'What is Elixir good for?', event: 'Polyglot Tech London', url: 'https://www.meetup.com/Polyglot-Tech-London/events/233382618/', video: _elm_lang$core$Maybe$Nothing},
 									_1: {
 										ctor: '::',
-										_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/', video: _elm_lang$core$Maybe$Nothing},
+										_0: {title: 'The Thing About Innovation', event: 'TravelTech Innovation Summit', url: 'http://www.luxatiainternational.com/Events/annual-mobile-first-travel-summit/', video: _elm_lang$core$Maybe$Nothing},
 										_1: {
 											ctor: '::',
-											_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/', video: _elm_lang$core$Maybe$Nothing},
+											_0: {title: 'The Most Powerful Tech Strategy', event: 'Tech for Britian', url: 'http://techforbritain.co.uk/', video: _elm_lang$core$Maybe$Nothing},
 											_1: {
 												ctor: '::',
-												_0: {
-													title: 'Reviewing Code Reviews',
-													event: 'London Software Craftmanship Community',
-													url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/',
-													video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/6958-code-reviews-are-fast')
-												},
-												_1: {ctor: '[]'}
+												_0: {title: 'Building Better Mousetraps with Reactive JS', event: 'TECH.insight Disruptive technologies', url: 'http://www.techinsight.io/event/london-april-2016/', video: _elm_lang$core$Maybe$Nothing},
+												_1: {
+													ctor: '::',
+													_0: {title: 'A Candid Conversation about Chatbots', event: 'London Web', url: 'https://www.meetup.com/londonweb/events/232583527/', video: _elm_lang$core$Maybe$Nothing},
+													_1: {
+														ctor: '::',
+														_0: {title: '24 Hours of Elixir, Caffeine and Slack Bots', event: 'Elixir London', url: 'https://www.meetup.com/Elixir-London/events/228584240/', video: _elm_lang$core$Maybe$Nothing},
+														_1: {
+															ctor: '::',
+															_0: {
+																title: 'Reviewing Code Reviews',
+																event: 'London Software Craftmanship Community',
+																url: 'https://www.meetup.com/london-software-craftsmanship/events/225941774/',
+																video: _elm_lang$core$Maybe$Just('https://skillsmatter.com/skillscasts/6958-code-reviews-are-fast')
+															},
+															_1: {ctor: '[]'}
+														}
+													}
+												}
 											}
 										}
 									}
