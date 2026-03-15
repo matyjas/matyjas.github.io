@@ -1,0 +1,22 @@
+{
+  "name": "matyjas.github.io",
+  "version": "3.0.0",
+  "description": "curated by Maciej Matyjas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matyjas/matyjas.github.io.git"
+  },
+  "license": "CC0-1.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "dependencies": {
+    "astro": "^6.0.4"
+  }
+}
