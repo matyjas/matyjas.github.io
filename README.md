@@ -1,10 +1,29 @@
-# a personal site
+# An awesome list of convenient, inspirational, and helpful resources on the web curated by Maciej Matyjas
 
-This here are the output files and source for a site called [Functional.systems](http://functional.systems) which used to be called [MaciejMatyjas.com](http://maciejmatyjas.com) and can be shortened to [funcsys.com](http://funcsys.com).
+## Table of Contents
 
-The source is in the [source directory](source). It is made of the following
-* [Brunch](http://brunch.io)
-* [Elm](http://elm-lang.org)
-* [Sass](http://sass-lang.com/)
+- [Connect with me](#connect-with-me)
+- [Inspiration](#inspiration)
+- [APIs](#apis)
+- [Programing languages](#programming-languages)
 
-The current version of the site isn't really a `static` site, it is more like a `web app` in that it is driven by JavaScript and templating. One day, I hope to find a nice way to do this with Elm.
+## Connect with me
+
+- [LinkedIn](https://www.linkedin.com/in/matyjas/) - Happy to connect a message folks on LinkedIn
+- [GitHub](https://www.linkedin.com/in/matyjas/) - Portfolio of personal projects and open source contributions
+- [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
+- [Functional.systems](http://functional.systems) - Aliased to the HTML version of this page
+- [funcsys.com](http://funcsys.com) - Shortened URL to Functional.systems
+
+## Inspiration
+
+- [Mirtha Dermisache](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding musings of ancient and extraterrestrial societies. 
+
+## APIs
+
+- [OpenAQ](https://openaq.org/) - Nonprofit community of air quality sensors and an API to access readings.
+- [github/public-apis](https://github.com/public-apis/public-apis) - Vast directory of APIs.
+
+## Programing languages
+
+- [Elm](http://elm-lang.org) - Strongly typed and well designed language (almost a framework) for web application development.
