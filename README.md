@@ -13,8 +13,9 @@ curated by Maciej Matyjas
 
 - [LinkedIn](https://www.linkedin.com/in/matyjas/) - Happy to connect & message folks on LinkedIn
 - [GitHub](https://github.com/matyjas) - Portfolio of personal projects and open source contributions
-- [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
+- [Exercism](https://exercism.org/profiles/iej) - Follow along as I tackle programming problems in a variety of languages.
 <!--
+- [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
 - [Functional.systems](http://functional.systems) - Aliased to the HTML version of this page
 - [funcsys.com](http://funcsys.com) - Shortened URL to Functional.systems
 -->
