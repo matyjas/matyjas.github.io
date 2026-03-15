@@ -2,12 +2,11 @@
 
 curated by Maciej Matyjas
 
-## Table of contents
-
 - [Connect with me](#connect-with-me)
 - [Blog posts](#blog-posts)
 - [Inspiration](#inspiration)
 - [APIs](#apis)
+- [Tools](#tools)
 - [Programming languages](#programming-languages)
 
 ## Connect with me
@@ -34,6 +33,10 @@ curated by Maciej Matyjas
 
 - [OpenAQ](https://openaq.org/) - Nonprofit community of air quality sensors and an API to access readings.
 - [github/public-apis](https://github.com/public-apis/public-apis) - Vast directory of APIs.
+
+## Tools
+
+- [Jamstack](https://jamstack.org/) - Massive list of technology for building websites associated with the Jamstack philosophy.
 
 ## Programming languages
 
