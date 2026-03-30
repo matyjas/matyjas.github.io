@@ -6,15 +6,16 @@ curated by Maciej Matyjas
 - [Blog posts](#blog-posts)
 - [Inspiration](#inspiration)
 - [APIs](#apis)
-- [Tools](#tools)
-- [Programming languages](#programming-languages)
+- [Rust](#rust)
+- [Web Dev](#web-dev)
 
 ## Connect with me
 
 - [LinkedIn](https://www.linkedin.com/in/matyjas/) - Happy to connect & message folks on LinkedIn
 - [GitHub](https://github.com/matyjas) - Portfolio of personal projects and open source contributions
-- [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
+- [Exercism](https://exercism.org/profiles/iej) - Follow along as I tackle programming problems in a variety of languages.
 <!--
+- [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
 - [Functional.systems](http://functional.systems) - Aliased to the HTML version of this page
 - [funcsys.com](http://funcsys.com) - Shortened URL to Functional.systems
 -->
@@ -34,10 +35,11 @@ curated by Maciej Matyjas
 - [OpenAQ](https://openaq.org/) - Nonprofit community of air quality sensors and an API to access readings.
 - [github/public-apis](https://github.com/public-apis/public-apis) - Vast directory of APIs.
 
-## Tools
+## Rust
+
+- [oas3-gen](https://crates.io/crates/oas3-gen) - Preferred generator for Rust clients and types from OpenAPI specification files. [APIs](#apis)
+
+## Web Dev
 
 - [Jamstack](https://jamstack.org/) - Massive list of technology for building websites associated with the Jamstack philosophy.
-
-## Programming languages
-
 - [Elm](http://elm-lang.org) - Strongly typed and well designed language (almost a framework) for web application development.

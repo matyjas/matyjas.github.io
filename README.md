@@ -6,8 +6,8 @@ curated by Maciej Matyjas
 - [Blog posts](#blog-posts)
 - [Inspiration](#inspiration)
 - [APIs](#apis)
-- [Tools](#tools)
-- [Programming languages](#programming-languages)
+- [Rust](#rust)
+- [Web Dev](#web-dev)
 
 ## Connect with me
 
@@ -35,10 +35,11 @@ curated by Maciej Matyjas
 - [OpenAQ](https://openaq.org/) - Nonprofit community of air quality sensors and an API to access readings.
 - [github/public-apis](https://github.com/public-apis/public-apis) - Vast directory of APIs.
 
-## Tools
+## Rust
+
+- [oas3-gen](https://crates.io/crates/oas3-gen) - Preferred generator for Rust clients and types from OpenAPI specification files. [APIs](#apis)
+
+## Web Dev
 
 - [Jamstack](https://jamstack.org/) - Massive list of technology for building websites associated with the Jamstack philosophy.
-
-## Programming languages
-
 - [Elm](http://elm-lang.org) - Strongly typed and well designed language (almost a framework) for web application development.
