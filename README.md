@@ -8,6 +8,7 @@ curated by Maciej Matyjas
 - [APIs](#apis)
 - [Rust](#rust)
 - [Web Dev](#web-dev)
+- [Managed PostgreSQL](#managed-postgresql)
 
 ## Connect with me
 
@@ -28,7 +29,7 @@ curated by Maciej Matyjas
 
 ## Inspiration
 
-- [Mirtha Dermisache](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding musings of ancient and extraterrestrial societies. 
+- [Mirtha Dermisache](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and extraterrestrial civilizations. 
 
 ## APIs
 
@@ -43,3 +44,11 @@ curated by Maciej Matyjas
 
 - [Jamstack](https://jamstack.org/) - Massive list of technology for building websites associated with the Jamstack philosophy.
 - [Elm](http://elm-lang.org) - Strongly typed and well designed language (almost a framework) for web application development.
+
+## Managed PostgreSQL
+
+- [Xata](https://xata.io/)
+- [Neon](https://neon.com/)
+- [Tiger Data](https://www.tigerdata.com/) - was TimescaleDB
+- [Nile](https://www.thenile.dev/)
+- [Supabase](https://supabase.com/)
