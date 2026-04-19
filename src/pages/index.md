@@ -12,7 +12,7 @@ curated by Maciej Matyjas
 - [Managed PostgreSQL](#managed-postgresql)
 - [Books](#books)
 - [Basketball](#basketball)
-- [News](#News)
+- [News](#news)
 
 ## Connect with me
 
