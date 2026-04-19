@@ -5,16 +5,20 @@ curated by Maciej Matyjas
 - [Connect with me](#connect-with-me)
 - [Blog posts](#blog-posts)
 - [Inspiration](#inspiration)
+- [Platforms](#platforms)
 - [APIs](#apis)
 - [Rust](#rust)
 - [Web Dev](#web-dev)
 - [Managed PostgreSQL](#managed-postgresql)
+- [Books](#books)
+- [Basketball](#basketball)
+- [News](#News)
 
 ## Connect with me
 
 - [LinkedIn](https://www.linkedin.com/in/matyjas/) - Happy to connect & message folks on LinkedIn
 - [GitHub](https://github.com/matyjas) - Portfolio of personal projects and open source contributions
-- [Exercism](https://exercism.org/profiles/iej) - Follow along as I tackle programming problems in a variety of languages.
+- [Exercism](https://exercism.org/profiles/iej) - Solutions to coding challenges in a variety of languages.
 <!--
 - [MaciejMatyjas.com](http://maciejmatyjas.com) - HTML version of this page
 - [Functional.systems](http://functional.systems) - Aliased to the HTML version of this page
@@ -29,7 +33,14 @@ curated by Maciej Matyjas
 
 ## Inspiration
 
-- [Mirtha Dermisache](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and extraterrestrial civilizations. 
+- [Mirtha Dermisache](https://jacket2.org/commentary/witness-mirtha-dermisache) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and extraterrestrial civilizations. Also in [The Marginalian](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/).
+- [aeon](https://aeon.co/) - Engaging and profound essays and video.
+- [Charlie Gerard](https://charliegerard.dev/) - Creative technologist's side project portfolio.
+
+## Platforms
+
+- [DNSimple](https://dnsimple.com/) - Minimalist DNS and domains servicing.
+- [Railway](https://railway.com/) - Ultra easy hosting of applications and more.
 
 ## APIs
 
@@ -52,3 +63,17 @@ curated by Maciej Matyjas
 - [Tiger Data](https://www.tigerdata.com/) - was TimescaleDB
 - [Nile](https://www.thenile.dev/)
 - [Supabase](https://supabase.com/)
+
+## Books
+
+- [The Marginalian](https://www.themarginalian.org/) - Maria Popova's notes on her reading of beautiful and meaningful books.
+
+## Basketball
+
+- [Posting and Toasting](https://www.postingandtoasting.com/) - New York Knicks focused basketball blog, lookout for posts by [Matthew Miranda](https://www.postingandtoasting.com/authors/mmiranda).
+- [kixstats](https://kixstats.com/) - Data source for sneakers on feet of basketball players in the NBA, WNBA, and Euroleague.
+
+## News
+
+- [Crooked Timber](https://crookedtimber.org/) - Intellectual discourse in a blog, feature multiple authors on a variety of subjects.
+- [InfoQ](https://www.infoq.com/) - Tech news for developers, the monthly software architect newsletter is something to look forward to!
