@@ -5,6 +5,7 @@ curated by Maciej Matyjas
 - [Connect with me](#connect-with-me)
 - [Blog posts](#blog-posts)
 - [Inspiration](#inspiration)
+- [Web site inspiration](#web-site-inspiration)
 - [Platforms](#platforms)
 - [APIs](#apis)
 - [Rust](#rust)
@@ -36,6 +37,13 @@ curated by Maciej Matyjas
 - [Mirtha Dermisache](https://jacket2.org/commentary/witness-mirtha-dermisache) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and extraterrestrial civilizations. Also in [The Marginalian](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/).
 - [aeon](https://aeon.co/) - Engaging and profound essays and video.
 - [Charlie Gerard](https://charliegerard.dev/) - Creative technologist's side project portfolio.
+- [Max Hawkins](https://maxhawkins.me/) - Random creative technologist.
+
+## Web site inspiration
+
+- [Coffee Diff](https://coffeediff.co.uk/)
+- [Guidelines for Brutalist Web Design](https://brutalist-web.design/)
+- [Bastian Allgeier(personal web site)](https://bastianallgeier.com/)
 
 ## Platforms
 
@@ -53,6 +61,7 @@ curated by Maciej Matyjas
 
 ## Web Dev
 
+- [Astro](https://astro.build/) - Framework for generating fast, static web sites.
 - [Jamstack](https://jamstack.org/) - Massive list of technology for building websites associated with the Jamstack philosophy.
 - [Elm](http://elm-lang.org) - Strongly typed and well designed language (almost a framework) for web application development.
 
