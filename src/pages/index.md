@@ -24,7 +24,8 @@ curated by Maciej Matyjas
 
 ## Inspiration
 
-- [Mirtha Dermisache](https://jacket2.org/commentary/witness-mirtha-dermisache) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and extraterrestrial civilizations. Also in [The Marginalian](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/).
+- [Night Feed by Eavan Boland](https://www.poetryireland.ie/publications/night-feed)
+- [Mirtha Dermisache](https://jacket2.org/commentary/witness-mirtha-dermisache) - Her work layers the pleasure of writing expressively in a notebook with the potential of decoding the musings of ancient and/or extraterrestrial civilizations. Also in [The Marginalian](https://www.themarginalian.org/2018/05/09/mirtha-dermisache-selected-writings/).
 - [aeon](https://aeon.co/) - Engaging and profound essays and video.
 - [Charlie Gerard](https://charliegerard.dev/) - Creative technologist's side project portfolio.
 - [Max Hawkins](https://maxhawkins.me/) - Random creative technologist.
